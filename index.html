@@ -1,10 +1,105 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Keramická dílna brána jazyků</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1">
+    <title>Keramická dílna brána jazyků</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
 
 </head>
+
+<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+<script id="intro-text" type="text/x-handlebars-template">
+    <p>
+        <b>{{ title}}</b>
+    </p>
+    <p>
+        {{ text }}
+    </p>
+</script>
+<script id="navbar-template" type="text/x-handlebars-template">
+         <div class="navbar-header">
+                <a class="navbar-brand" href="#"><img src="images/tinylogo.png" style="width: 100px"/></a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">{{ text1 }}</a></li>
+                <li><a href="#">{{ text2 }}</a></li>
+                <li><a href="#">{{ text3 }}</a></li>
+            </ul>
+</script>
+<script>
+    var template_intro_text = Handlebars.compile(document.querySelector('#intro-text').innerHTML);
+    var template_nav_bar = Handlebars.compile(document.querySelector('#navbar-template').innerHTML);
+
+    document.addEventListener('DOMContentLoaded', () => {
+        var language = 'cs';
+        document.querySelector('#cs').onclick = () => {
+            language = 'cs';
+            change_language(language)
+        };
+        document.querySelector('#en').onclick = () => {
+            language = 'en';
+            change_language(language)
+        };
+        change_language(language)
+    });
+
+    function change_language(selected_language) {
+        if (selected_language === 'cs') {
+            const content_navbar = template_nav_bar({'text1': "Aktuality", 'text2': "Informace",'text3': "ZŠ Brána jazyků"});
+            //document.querySelector('#navbar-template-section').innerHTML = content_navbar;
+
+            var title = "O dílně:";
+            var text = "Keramická dílna v Ostrovní ulici 16 funguje teprve jeden rok, ale její nesmírně pilní žáci\n" +
+                "    za tu dobu vytvořili obrovské množství úžaných výtvorů. Kroužky, které se konají v průběhu\n" +
+                "    celého týdne, vedou dva zkušení lektoři. Každému dítěti se věnují individuálně a pomáhají mu do\n" +
+                "    hlíny otisknout jeho vlastní představu.";
+            const content_intro = template_intro_text({'title': title, 'text': text});
+            document.querySelector('#intro_text').innerHTML = content_intro;
+
+        }
+        if (selected_language === 'en') {
+             const content_navbar = template_nav_bar({'text1': "News", 'text2': "Information",'text3': "ZŠ Brána jazyků"});
+            //document.querySelector('#navbar-template-section').innerHTML = content_navbar;
+
+            var title = "About ceramic studio:";
+            var text = "The ceramic workshop in Ostrovní Street 16 has only been operating for one year, but it is extremely diligent\n" +
+                "    Pupils during that time they created a huge number of jerky creations. Rings that take place in\n" +
+                "    course all week, led by two experienced lecturers. They pay attention to each child individually and\n" +
+                "    help him to clay to imprint his own idea.";
+            const content_intro = template_intro_text({'title': title, 'text': text});
+            document.querySelector('#intro_text').innerHTML = content_intro;
+        }
+    }
+</script>
+
 <body>
+<nav class="navbar sticky-top navbar-light" style="background-color: lightsteelblue;border-style: solid; border-color: steelblue;">
+    <div class="container-fluid" id="navbar-template-section">
+                 <div class="navbar-header">
+                <a class="navbar-brand" href="#"><img src="images/tinylogo.png" style="width: 100px"/></a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">{{ text1 }}</a></li>
+                <li><a href="#">{{ text2 }}</a></li>
+                <li><a href="#">{{ text3 }}</a></li>
+            </ul>
+
+    </div>
+</nav>
 <h1>Keramická dílna brána jazyků</h1>
+<button id="cs">cs</button>
+<button id="en">en</button>
+<div id="intro_text"></div>
+<img src="images/tinylogo.png" style="width: 500px"/><br>
+<img src="images/tinylogo.png" style="width: 500px"/><br>
+<img src="images/tinylogo.png" style="width: 500px"/><br>
+<img src="images/tinylogo.png" style="width: 500px"/><br>
+<img src="images/tinylogo.png" style="width: 500px"/><br>
+<img src="images/tinylogo.png" style="width: 500px"/><br>
 </body>
 </html>
