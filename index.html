@@ -21,15 +21,15 @@
     </p>
 </script>
 <script id="navbar-template" type="text/x-handlebars-template">
-         <div class="navbar-header">
-                <a class="navbar-brand" href="#"><img src="images/tinylogo.png" style="width: 100px"/></a>
-            </div>
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">{{ text1 }}</a></li>
-                <li><a href="#">{{ text2 }}</a></li>
-                <li><a href="#">{{ text3 }}</a></li>
-            </ul>
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#"><img src="images/tinylogo.png" style="width: 100px"/></a>
+    </div>
+    <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">{{ text1 }}</a></li>
+        <li><a href="#">{{ text2 }}</a></li>
+        <li><a href="#">{{ text3 }}</a></li>
+    </ul>
 </script>
 <script>
     var template_intro_text = Handlebars.compile(document.querySelector('#intro-text').innerHTML);
@@ -50,7 +50,11 @@
 
     function change_language(selected_language) {
         if (selected_language === 'cs') {
-            const content_navbar = template_nav_bar({'text1': "Aktuality", 'text2': "Informace",'text3': "ZŠ Brána jazyků"});
+            const content_navbar = template_nav_bar({
+                'text1': "Aktuality",
+                'text2': "Informace",
+                'text3': "ZŠ Brána jazyků"
+            });
             //document.querySelector('#navbar-template-section').innerHTML = content_navbar;
 
             var title = "O dílně:";
@@ -63,7 +67,11 @@
 
         }
         if (selected_language === 'en') {
-             const content_navbar = template_nav_bar({'text1': "News", 'text2': "Information",'text3': "ZŠ Brána jazyků"});
+            const content_navbar = template_nav_bar({
+                'text1': "News",
+                'text2': "Information",
+                'text3': "ZŠ Brána jazyků"
+            });
             //document.querySelector('#navbar-template-section').innerHTML = content_navbar;
 
             var title = "About ceramic studio:";
@@ -78,44 +86,63 @@
 </script>
 
 <body>
-<nav id="navbar-template-section" class="navbar sticky-top navbar-expand-md navbar-light"  style="background-color: lightsteelblue;border-style: solid; border-color: steelblue;">
-  <a class="navbar-brand" href="index.html"><img src="images/tinylogo.png"  width="100"  class="d-inline-block align-top" alt="" /></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<nav id="navbar-template-section" class="navbar sticky-top navbar-expand-md navbar-light"
+     style="background-color: lightsteelblue;border-style: solid; border-color: steelblue;">
+    <a class="navbar-brand" href="index.html"><img src="images/tinylogo.png" width="100"
+                                                   class="d-inline-block align-top" alt=""/></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="#">Děti<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Dospělí</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Jazyk
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <button id="cs" class="dropdown-item" type="button">cs <img src="images/czech_flag.PNG"  style="margin-top: 7px; margin-left: 3px" width="20"  class="d-inline-block align-top" alt="" /></button>
-          <button id="en" class="dropdown-item" type="button">en <img src="images/english_flag.PNG"  style="margin-top: 7px; margin-left: 3px" width="20"  class="d-inline-block align-top" alt="" /></button>
-        </div>
-
-    </ul>
-      <ul class="navbar-nav ml-auto">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Děti<span class="sr-only">(current)</span></a>
             </li>
-         <li class="nav-item " >
-        <a class="nav-link"  target="_blank" rel="noopener noreferrer" href="http://www.facebook.com/pages/Keramick%C3%A1-d%C3%ADlna-Z%C5%A0-Br%C3%A1na-jazyk%C5%AF/204959079548049"data-placement="bottom" title="facebook"> <img src="images/facebook.png"  width="28"  class="d-inline-block" alt="" /></a>
-      </li>
-                <li class="nav-item " >
-        <a class="nav-link" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/keramikaostrovni/?hl=en"data-placement="bottom" title="instagram"> <img src="images/instagram.png"  width="30"  class="d-inline-block" alt="" /></a>
-      </li>
-                </li>
-                <li class="nav-item " >
-        <a class="nav-link" target="_blank" rel="noopener noreferrer" href="http://www.branajazyku.cz/" data-placement="bottom" title="ZŠ Brána jazyků"> <img src="images/branajazyku.png"  width="30"  class="d-inline-block" alt="" /></a>
-      </li>
-      </ul>
-  </div>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Dospělí</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    Jazyk
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <button id="cs" class="dropdown-item" type="button">cs <img src="images/czech_flag.PNG"
+                                                                                style="margin-top: 7px; margin-left: 5px"
+                                                                                width="20"
+                                                                                class="d-inline-block align-top"
+                                                                                alt=""/></button>
+                    <button id="en" class="dropdown-item" type="button">en <img src="images/english_flag.PNG"
+                                                                                style="margin-top: 7px; margin-left: 3px"
+                                                                                width="20"
+                                                                                class="d-inline-block align-top"
+                                                                                alt=""/></button>
+                </div>
+
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" target="_blank" rel="noopener noreferrer"
+                   href="http://www.facebook.com/pages/Keramick%C3%A1-d%C3%ADlna-Z%C5%A0-Br%C3%A1na-jazyk%C5%AF/204959079548049"
+                   data-placement="bottom" title="facebook"> <img src="images/facebook.png" width="28"
+                                                                  class="d-inline-block" alt="" style="margin-top: 10px"/></a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" target="_blank" rel="noopener noreferrer"
+                   href="https://www.instagram.com/keramikaostrovni/?hl=en" data-placement="bottom" title="instagram">
+                    <img src="images/instagram.png" width="30" class="d-inline-block" alt="" style="margin-top: 10px;margin-bottom: 5px"/></a>
+            </li>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" target="_blank" rel="noopener noreferrer" href="http://www.branajazyku.cz/"
+                   data-placement="bottom" title="ZŠ Brána jazyků"> <img src="images/branalogoclean.jpg" width="37"
+                                                                         class="d-inline-block" alt=""/></a>
+            </li>
+        </ul>
+    </div>
 </nav>
 <h1>Keramická dílna brána jazyků</h1>
 
@@ -127,9 +154,15 @@
 <img src="images/tinylogo.png" style="width: 500px"/><br>
 <img src="images/tinylogo.png" style="width: 500px"/><br>
 <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+        integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
+        integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+        crossorigin="anonymous"></script>
 </body>
 </html>
