@@ -29,6 +29,15 @@ $cdarkbeige: #bfbd9f;
         margin-right: 10px
       }
     }
+
+    #outside-pages-links {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      a {
+        padding: 4px
+      }
+    }
+
   }
   @media (max-width: 767px) {
     #language-dropdown {
@@ -47,18 +56,29 @@ $cdarkbeige: #bfbd9f;
 
 
     }
+
+     #outside-pages-links {
+      display: grid;
+      grid-template-columns: auto auto auto;
+       padding-left: 30%;
+       padding-right: 30%;
+      a {
+        padding-bottom: 3px;
+        padding-top: 3px;
+      }
+    }
   }
 }
 
-.nav-item {
-  a {
-    color: $cgrey;
-    font-size: 16pt;
-  }
-  a:hover{
-    color:$cdarkblue;
-  }
+.nav-link {
+  color: $cgrey;
+  font-size: 16pt;
 }
+
+.nav-link:hover {
+  color: $cdarkblue;
+}
+
 
 #language-dropdown {
   #czech-flag {
@@ -72,7 +92,8 @@ $cdarkbeige: #bfbd9f;
     margin-top: 7px;
     margin-left: 3px
   }
-  .language_dropdown_button{
+
+  .language_dropdown_button {
     color: $cdarkblue;
   }
 }

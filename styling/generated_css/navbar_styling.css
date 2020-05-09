@@ -18,6 +18,13 @@
   #navbar-template-section .navbar-brand #nav-logo-picture {
     margin-right: 10px;
   }
+  #navbar-template-section #outside-pages-links {
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
+  #navbar-template-section #outside-pages-links a {
+    padding: 4px;
+  }
 }
 @media (max-width: 767px) {
   #navbar-template-section #language-dropdown {
@@ -33,13 +40,24 @@
     left: 50%;
     transform: translateX(-50%);
   }
+  #navbar-template-section #outside-pages-links {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding-left: 30%;
+    padding-right: 30%;
+  }
+  #navbar-template-section #outside-pages-links a {
+    padding-bottom: 3px;
+    padding-top: 3px;
+  }
 }
 
-.nav-item a {
+.nav-link {
   color: #d9d9d9;
   font-size: 16pt;
 }
-.nav-item a:hover {
+
+.nav-link:hover {
   color: #031740;
 }
 
