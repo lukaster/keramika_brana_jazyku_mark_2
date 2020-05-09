@@ -5,11 +5,11 @@
   padding-bottom: 0;
   padding-top: 0;
   padding-left: 5px;
-  color: #d9d9d9;
+  color: #fcfaf2;
 }
 @media (min-width: 768px) {
   #navbar-template-section #language-dropdown {
-    background-color: #d9d9d9;
+    background-color: #fcfaf2;
   }
   #navbar-template-section .navbar-brand {
     display: block;
@@ -28,7 +28,7 @@
 }
 @media (max-width: 767px) {
   #navbar-template-section #language-dropdown {
-    background-color: #d9d9d9;
+    background-color: #fcfaf2;
     text-align: center;
   }
   #navbar-template-section .navbar-brand {
@@ -53,7 +53,7 @@
 }
 
 .nav-link {
-  color: #d9d9d9;
+  color: #fcfaf2;
   font-size: 16pt;
 }
 
