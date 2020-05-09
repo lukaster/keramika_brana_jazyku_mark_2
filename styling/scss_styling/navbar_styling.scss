@@ -3,6 +3,8 @@ $h1color: brown;
   color: $h1color
 }
 
+@media (min-width: 768px) {
+}
 
 #navbar-template-section {
   background-color: lightsteelblue;
@@ -12,28 +14,48 @@ $h1color: brown;
   padding-top: 0;
   padding-left: 5px;
 
-  .navbar-brand {
-    display: block;
-    margin: 0 auto;
+  @media (min-width: 768px) {
+    .navbar-brand {
+      display: block;
+      margin: 0 auto;
 
-    #nav-logo-picture{
-      margin-right: 10px
+      #nav-logo-picture {
+        margin-right: 10px
+      }
     }
+  }
+  @media (max-width: 767px) {
 
+    .navbar-brand {
+      height: 92px;
+      margin: 0 auto;
+          #nav-logo-picture {
+          position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      }
+
+
+    }
   }
 }
 
-#language-dropdown{
-  #czech-flag{
+#language-dropdown {
+  #czech-flag {
     width: 20px;
-    margin-top: 7px; margin-left: 5px
+    margin-top: 7px;
+    margin-left: 5px
   }
-  #english-flag{
+
+  #english-flag {
     width: 20px;
-    margin-top: 7px; margin-left: 3px
+    margin-top: 7px;
+    margin-left: 3px
   }
 }
+
 .navbar .navbar-collapse {
   text-align: center;
 
 }
+
