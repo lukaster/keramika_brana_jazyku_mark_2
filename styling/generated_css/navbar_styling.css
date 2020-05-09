@@ -1,16 +1,16 @@
-#hello {
-  color: brown;
-}
-
 #navbar-template-section {
-  background-color: lightsteelblue;
+  background-color: #537fa6;
   border-style: solid;
-  border-color: steelblue;
+  border-color: #031740;
   padding-bottom: 0;
   padding-top: 0;
   padding-left: 5px;
+  color: #d9d9d9;
 }
 @media (min-width: 768px) {
+  #navbar-template-section #language-dropdown {
+    background-color: #d9d9d9;
+  }
   #navbar-template-section .navbar-brand {
     display: block;
     margin: 0 auto;
@@ -20,8 +20,12 @@
   }
 }
 @media (max-width: 767px) {
+  #navbar-template-section #language-dropdown {
+    background-color: #d9d9d9;
+    text-align: center;
+  }
   #navbar-template-section .navbar-brand {
-    height: 92px;
+    height: 80px;
     margin: 0 auto;
   }
   #navbar-template-section .navbar-brand #nav-logo-picture {
@@ -29,6 +33,14 @@
     left: 50%;
     transform: translateX(-50%);
   }
+}
+
+.nav-item a {
+  color: #d9d9d9;
+  font-size: 16pt;
+}
+.nav-item a:hover {
+  color: #031740;
 }
 
 #language-dropdown #czech-flag {
@@ -40,6 +52,9 @@
   width: 20px;
   margin-top: 7px;
   margin-left: 3px;
+}
+#language-dropdown .language_dropdown_button {
+  color: #031740;
 }
 
 .navbar .navbar-collapse {
