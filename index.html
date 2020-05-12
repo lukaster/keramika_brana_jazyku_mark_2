@@ -4,6 +4,18 @@
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1">
     <title>Keramická dílna brána jazyků</title>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+            src="https://code.jquery.com/jquery-3.5.1.min.js"
+            integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
     <link rel="icon" href="images/konikrightsmall.jpg">
     <link rel="stylesheet" href="styling/generated_css/navbar_styling.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
@@ -13,151 +25,24 @@
 </head>
 
 <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
-<script id="intro-text" type="text/x-handlebars-template">
-    <p>
-        <b>{{ title}}</b>
-    </p>
-    <p>
-        {{ text }}
-    </p>
-</script>
-<script id="navbar-template" type="text/x-handlebars-template">
-    <div class="navbar-header">
-        <a class="navbar-brand" href="#"><img src="images/tinylogo.png" style="width: 100px"/></a>
-    </div>
-    <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">{{ text1 }}</a></li>
-        <li><a href="#">{{ text2 }}</a></li>
-        <li><a href="#">{{ text3 }}</a></li>
-    </ul>
-</script>
-<script>
-    var template_intro_text = Handlebars.compile(document.querySelector('#intro-text').innerHTML);
-    var template_nav_bar = Handlebars.compile(document.querySelector('#navbar-template').innerHTML);
 
+<script src="js/load_main_menu_and_body.js"></script>
+<script>
     document.addEventListener('DOMContentLoaded', () => {
-        var language = 'cs';
-        document.querySelector('#cs').onclick = () => {
-            language = 'cs';
-            change_language(language)
-        };
-        document.querySelector('#en').onclick = () => {
-            language = 'en';
-            change_language(language)
-        };
-        change_language(language)
+        set_bg_color();
+        add_navbar();
+    });
+    $(document).one("DOMNodeInserted", function () {//workaround, because after loading DOM it does not yet recognize the newly inserted buttons ids
+        console.log("DOMNodeInserted")
+        $('#en').click(navbar_en);
+        $('#cs').click(navbar_cs);
     });
 
-    function change_language(selected_language) {
-        if (selected_language === 'cs') {
-            const content_navbar = template_nav_bar({
-                'text1': "Aktuality",
-                'text2': "Informace",
-                'text3': "ZŠ Brána jazyků"
-            });
-            //document.querySelector('#navbar-template-section').innerHTML = content_navbar;
-
-            var title = "O dílně:";
-            var text = "Keramická dílna v Ostrovní ulici 16 funguje teprve jeden rok, ale její nesmírně pilní žáci\n" +
-                "    za tu dobu vytvořili obrovské množství úžaných výtvorů. Kroužky, které se konají v průběhu\n" +
-                "    celého týdne, vedou dva zkušení lektoři. Každému dítěti se věnují individuálně a pomáhají mu do\n" +
-                "    hlíny otisknout jeho vlastní představu.";
-            const content_intro = template_intro_text({'title': title, 'text': text});
-            document.querySelector('#intro_text').innerHTML = content_intro;
-
-        }
-        if (selected_language === 'en') {
-            const content_navbar = template_nav_bar({
-                'text1': "News",
-                'text2': "Information",
-                'text3': "ZŠ Brána jazyků"
-            });
-            //document.querySelector('#navbar-template-section').innerHTML = content_navbar;
-
-            var title = "About ceramic studio:";
-            var text = "The ceramic workshop in Ostrovní Street 16 has only been operating for one year, but it is extremely diligent\n" +
-                "    Pupils during that time they created a huge number of jerky creations. Rings that take place in\n" +
-                "    course all week, led by two experienced lecturers. They pay attention to each child individually and\n" +
-                "    help him to clay to imprint his own idea.";
-            const content_intro = template_intro_text({'title': title, 'text': text});
-            document.querySelector('#intro_text').innerHTML = content_intro;
-        }
-    }
 </script>
 
-<body>
-<nav id="navbar-template-section" class="navbar sticky-top navbar-expand-md">
-
-    <a class="navbar-brand" href="index.html"><img id="nav-logo-picture" src="images/keramikaLogo2higher.jpg"
-                                                   width="170"
-                                                   class="d-inline-block align-top" alt=""/></a>
-    <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="#">Děti<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Dospělí</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Učitelé</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">
-                    Jazyk
-                </a>
-                <div id="language-dropdown" class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <button id="cs" class="dropdown-item language_dropdown_button" type="button">cs <img id="czech-flag"
-                                                                                                         src="images/czech_flag.PNG"
-                                                                                                         class="d-inline-block align-top"
-                                                                                                         alt=""/>
-                    </button>
-                    <button id="en" class="dropdown-item language_dropdown_button" type="button">en <img
-                            id="english-flag"
-                            src="images/english_flag.PNG"
-                            class="d-inline-block align-top"
-                            alt=""/></button>
-                </div>
-
-        </ul>
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <div class="grid" id="outside-pages-links">
-                    <div class="grid-item">
-                        <a id="insta_logo_link" class="nav-link" target="_blank" rel="noopener noreferrer"
-                           href="https://www.instagram.com/keramikaostrovni/?hl=en" data-placement="bottom"
-                           title="instagram">
-                            <img src="images/instagram_logo/insta_transparent.png"  onmouseover="this.src='images/instagram_logo/insta_blue.png'"
-onmouseout="this.src='images/instagram_logo/insta_transparent.png'"width="34" class="d-inline-block" alt=""/></a>
-                    </div>
-                    <div id="fb_logo_link" class="grid-item outside-page-link">
-                        <a class="nav-link" target="_blank" rel="noopener noreferrer"
-                           href="http://www.facebook.com/pages/Keramick%C3%A1-d%C3%ADlna-Z%C5%A0-Br%C3%A1na-jazyk%C5%AF/204959079548049"
-                           data-placement="bottom" title="facebook"> <img src="images/fb_logo/fb_transparent.png" onmouseover="this.src='images/fb_logo/fb_dark_blue.png'"
-onmouseout="this.src='images/fb_logo/fb_transparent.png'" width="32"
-                                                                          class="d-inline-block" alt=""/></a>
-                    </div>
-                    <div id="school_logo_link" class="grid-item outside-page-link">
-                        <a class="nav-link" target="_blank" rel="noopener noreferrer"
-                           href="http://www.branajazyku.cz/" data-placement="bottom"
-                           title="ZŠ Brána jazyků">
-                            <img   src="images/school_logo/gate_logo_transparent.png" onmouseover="this.src='images/school_logo/gate_logo_yellow.png'"
-onmouseout="this.src='images/school_logo/gate_logo_transparent.png'" width="34" class="d-inline-block" alt="" /></a>
-                    </div>
-                </div>
-            </li>
-        </ul>
-    </div>
-</nav>
-<div style="background-color:#fcfaf2">
+<body id="body">
+<nav id="navbar-template-section" class="navbar sticky-top navbar-expand-md"></nav>
+<div>
 
     <h1 id="hello">Keramická dílna brána jazyků</h1>
 
@@ -174,16 +59,6 @@ onmouseout="this.src='images/school_logo/gate_logo_transparent.png'" width="34" 
     <img src="images/tinylogo.png" style="width: 50%"/><br>
 
 </div>
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
+
 </body>
 </html>
