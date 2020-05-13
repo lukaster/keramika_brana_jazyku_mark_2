@@ -1,5 +1,42 @@
-#some_div {
-  background-color: #fcfaf2;
+@media (min-width: 768px) {
+  .row-no-padding [class*=side-left] {
+    padding-left: 15px;
+    padding-right: 0;
+    order: 1;
+  }
+  .row-no-padding [class*=side-right] {
+    padding-left: 0;
+    padding-right: 15px;
+    order: 2;
+  }
+
+  .row-container {
+    padding-left: 0;
+    padding-right: 0;
+    border-left: solid #031740;
+    border-right: solid #031740;
+  }
+
+  .text-bubble-col {
+    text-align: center;
+  }
+}
+@media (max-width: 767px) {
+  .row-no-padding [class*=side-] {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .row-container {
+    padding-left: 0;
+    padding-right: 0;
+    border-left: solid #031740;
+    border-right: solid #031740;
+  }
+
+  .text-bubble-col {
+    text-align: center;
+  }
 }
 
 /*# sourceMappingURL=index_styling.css.map */
