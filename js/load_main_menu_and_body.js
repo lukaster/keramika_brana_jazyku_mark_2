@@ -25,6 +25,25 @@ function add_navbar() {
     console.log("navbar loaded")
 }
 
+function add_navbar_other_path() {
+    $.get('../templates/navbar_other_path.html', function (data, status) {
+        //console.log(data);
+        //$('#navbar-template-section').html(data);
+        var $data=$(data);
+
+         if(language==='en') {
+             //console.log($data.find('#children_menu').text());
+             $data.find('#children_menu').text("Children");
+             $data.find('#adults_menu').text("Adults");
+             $data.find('#teachers_menu').text("Teachers");
+             $data.find('#navbarDropdown').text("Language");
+         }
+       $('#navbar-template-section').html($data.unwrap());
+    });
+    //var template_section = $('#navbar-template-section').load('templates/navbar.html');
+    console.log("navbar loaded")
+}
+
 function navbar_en() {
     $('#children_menu').text("Children");
     $('#adults_menu').text("Adults");
