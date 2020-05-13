@@ -32,7 +32,7 @@
     text-align: center;
   }
   #navbar-template-section .navbar-brand {
-    height: 80px;
+    height: 79px;
     margin: 0 auto;
   }
   #navbar-template-section .navbar-brand #nav-logo-picture {
@@ -60,7 +60,6 @@
 .nav-link:hover {
   color: #031740;
 }
-
 #language-dropdown #czech-flag {
   width: 20px;
   margin-top: 7px;

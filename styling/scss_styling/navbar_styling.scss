@@ -17,6 +17,7 @@ $cdarkbeige: #bfbd9f;
   padding-left: 5px;
   color: $clightyellow;
 
+
   @media (min-width: 768px) {
     #language-dropdown {
       background-color: $clightyellow;
@@ -45,7 +46,7 @@ $cdarkbeige: #bfbd9f;
       text-align: center;
     }
     .navbar-brand {
-      height: 80px;
+      height: 79px;
       margin: 0 auto;
 
       #nav-logo-picture {
@@ -77,6 +78,9 @@ $cdarkbeige: #bfbd9f;
 
 .nav-link:hover {
   color: $cdarkblue;
+  #language_drop-li{
+
+  }
 }
 
 
