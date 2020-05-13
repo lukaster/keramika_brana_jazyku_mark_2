@@ -1,20 +1,25 @@
 @media (min-width: 768px) {
-  .row-no-padding [class*=side-left] {
-    padding-left: 15px;
-    padding-right: 0;
-    order: 1;
-  }
-  .row-no-padding [class*=side-right] {
-    padding-left: 0;
-    padding-right: 15px;
-    order: 2;
-  }
-
   .row-container {
     padding-left: 0;
     padding-right: 0;
     border-left: solid #031740;
     border-right: solid #031740;
+  }
+  .row-container .row-no-padding {
+    margin-right: 0;
+    padding-right: 0;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .row-container .row-no-padding [class*=side-left] {
+    padding-left: 0;
+    padding-right: 0;
+    order: 1;
+  }
+  .row-container .row-no-padding [class*=side-right] {
+    padding-left: 0;
+    padding-right: 0;
+    order: 2;
   }
 
   .text-bubble-col {
@@ -22,16 +27,22 @@
   }
 }
 @media (max-width: 767px) {
-  .row-no-padding [class*=side-] {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-
   .row-container {
     padding-left: 0;
     padding-right: 0;
+    margin-right: 0;
     border-left: solid #031740;
     border-right: solid #031740;
+  }
+  .row-container .row-no-padding {
+    margin-right: 0;
+    padding-right: 0;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .row-container .row-no-padding [class*=side-] {
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .text-bubble-col {
