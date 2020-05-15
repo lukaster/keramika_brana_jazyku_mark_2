@@ -1,17 +1,80 @@
 $cdarkblue: #031740;
 $clightblue: #537fa6;
-$clightyellow: #fcfaf2;// #d9d9d9;
+$clightyellow: #fcfaf2; // #d9d9d9;
 $clightbeige: #d8d9b8;
 $cdarkbeige: #bfbd9f;
 
+$animationnavbarlenght: 5s;
+
+@keyframes change-navbar-to-small {
+  0% {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    height: 99px;
+  }
+  20% {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    height: 79px;
+  }
+  100% {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    height: 79px;
+  }
+}
+
+@keyframes change-navbar-to-large {
+  0% {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    height: 79px;
+  }
+  20% {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    height: 99px;
+  }
+  100% {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    height: 99px;
+  }
+}
+
+.smallnavbar {
+  animation-name: change-navbar-to-small;
+  animation-duration: $animationnavbarlenght;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+}
+
+.bignavbar {
+  animation-name: change-navbar-to-large;
+  animation-duration: $animationnavbarlenght;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+}
+
+.bignavbarfinal {
+  padding-top: 15px !important;
+  padding-bottom: 15px !important;
+  height: 99px !important;
+}
+
+.smallnavbarfinal {
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+  height: 79px !important;
+}
 
 @media (min-width: 768px) {
 }
 
 #navbar-template-section {
-  background-color: $clightblue; // lightsteelblue;
+  background-color: $clightblue;
   border-style: solid;
-  border-color: $cdarkblue; //steelblue;
+  border-color: $cdarkblue;
   padding-bottom: 0;
   padding-top: 0;
   padding-left: 5px;
@@ -22,6 +85,7 @@ $cdarkbeige: #bfbd9f;
     #language-dropdown {
       background-color: $clightyellow;
     }
+
     .navbar-brand {
       display: block;
       margin: 0 auto;
@@ -34,6 +98,7 @@ $cdarkbeige: #bfbd9f;
     #outside-pages-links {
       display: grid;
       grid-template-columns: auto auto auto;
+
       a {
         padding: 4px
       }
@@ -45,8 +110,8 @@ $cdarkbeige: #bfbd9f;
       background-color: $clightyellow;
       text-align: center;
     }
+
     .navbar-brand {
-      height: 79px;
       margin: 0 auto;
 
       #nav-logo-picture {
@@ -58,11 +123,12 @@ $cdarkbeige: #bfbd9f;
 
     }
 
-     #outside-pages-links {
+    #outside-pages-links {
       display: grid;
       grid-template-columns: auto auto auto;
-       padding-left: 30%;
-       padding-right: 30%;
+      padding-left: 30%;
+      padding-right: 30%;
+
       a {
         padding-bottom: 3px;
         padding-top: 3px;
@@ -78,7 +144,8 @@ $cdarkbeige: #bfbd9f;
 
 .nav-link:hover {
   color: $cdarkblue;
-  #language_drop-li{
+
+  #language_drop-li {
 
   }
 }

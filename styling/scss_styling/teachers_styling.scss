@@ -1,0 +1,68 @@
+$cdarkblue: #031740;
+$clightblue: #537fa6;
+$clightyellow: #fcfaf2; // #d9d9d9;
+$clightbeige: #d8d9b8;
+$cdarkbeige: #bfbd9f;
+//todo refactor redundancies away
+
+
+.picture-col {
+  background-color: aquamarine;
+
+
+  padding: 0 !important;
+  margin: 0 !important;
+
+  img {
+    width: 100%;
+
+  }
+}
+
+.text-bubble-col {
+    background-color: #bbb;
+}
+
+@media (min-width: 768px) {
+  .container-fluid {
+
+    .row {
+      [class*="side_"] {
+
+      }
+
+      .side_left {
+        border-left: solid $cdarkblue;
+        order: 1;
+      }
+
+      .side_right {
+        border-right: solid $cdarkblue;
+        order: 2;
+      }
+    }
+  }
+
+  .text-bubble-col {
+    text-align: center;
+  }
+}
+
+
+@media (max-width: 767px) {
+
+  .container-fluid {
+
+    .row {
+      [class*="side_"] {
+        border-left: solid $cdarkblue;
+        border-right: solid $cdarkblue;
+      }
+    }
+  }
+
+  .text-bubble-col {
+    text-align: center;
+  }
+
+}

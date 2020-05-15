@@ -6,66 +6,47 @@ $cdarkbeige: #bfbd9f;
 //todo refactor redundancies away
 
 @media (min-width: 768px) {
-  .row-container {
-    padding-left: 0;
-    padding-right: 0;
+  .container-fluid {
 
     border-left: solid $cdarkblue;
     border-right: solid $cdarkblue;
 
     .row-no-padding {
-      margin-right: 0;
-      padding-right: 0;
-      margin-left: 0;
-      padding-left: 0;
 
-
-      [class*="side-left"] {
+      [class*="side-"] {
         padding-left: 0;
         padding-right: 0;
+      }
+
+      .side-left {
         order: 1;
       }
 
-      [class*="side-right"] {
-        padding-left: 0;
-        padding-right: 0;
+      .side-right {
         order: 2;
       }
     }
-
-
   }
 
   .text-bubble-col {
     text-align: center;
   }
-
 }
+
 
 @media (max-width: 767px) {
 
-  .row-container {
-    padding-left: 0;
-    padding-right: 0;
-    margin-right: 0;
+  .container-fluid {
 
     border-left: solid $cdarkblue;
     border-right: solid $cdarkblue;
 
     .row-no-padding {
-      margin-right: 0;
-      padding-right: 0;
-      margin-left: 0;
-      padding-left: 0;
-
       [class*="side-"] {
         padding-left: 0;
         padding-right: 0;
-
       }
-
     }
-
   }
 
   .text-bubble-col {

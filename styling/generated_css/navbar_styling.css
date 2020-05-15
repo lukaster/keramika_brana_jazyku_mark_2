@@ -1,3 +1,63 @@
+@keyframes change-navbar-to-small {
+  0% {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    height: 99px;
+  }
+  20% {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    height: 79px;
+  }
+  100% {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    height: 79px;
+  }
+}
+@keyframes change-navbar-to-large {
+  0% {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    height: 79px;
+  }
+  20% {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    height: 99px;
+  }
+  100% {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    height: 99px;
+  }
+}
+.smallnavbar {
+  animation-name: change-navbar-to-small;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+}
+
+.bignavbar {
+  animation-name: change-navbar-to-large;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+}
+
+.bignavbarfinal {
+  padding-top: 15px !important;
+  padding-bottom: 15px !important;
+  height: 99px !important;
+}
+
+.smallnavbarfinal {
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+  height: 79px !important;
+}
+
 #navbar-template-section {
   background-color: #537fa6;
   border-style: solid;
@@ -32,7 +92,6 @@
     text-align: center;
   }
   #navbar-template-section .navbar-brand {
-    height: 79px;
     margin: 0 auto;
   }
   #navbar-template-section .navbar-brand #nav-logo-picture {
