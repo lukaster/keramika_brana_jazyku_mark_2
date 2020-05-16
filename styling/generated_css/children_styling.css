@@ -1,3 +1,25 @@
+.fill-screen {
+  background-size: cover;
+  background-position: center;
+}
 
+.content-filler {
+  min-height: 350px;
+}
+
+.fixed-attachment {
+  background-attachment: fixed;
+}
+
+section h2 {
+  padding-left: 10%;
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+section p {
+  text-align: center;
+  padding-left: 3%;
+  padding-right: 3%;
+}
 
 /*# sourceMappingURL=children_styling.css.map */

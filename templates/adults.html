@@ -33,11 +33,16 @@
         set_bg_color();
         add_navbar_other_path();
     });
-        var navbarsize = 'large';
+    var navbarsize = 'large';
     window.onscroll = () => {
         navbar_resizing_scrolling();
 
-    }
+    };
+    $(function () {
+        $(window).on("load resize", function () {
+            $(".fill-screen").css("height", window.innerHeight);
+        });
+    });
 
 </script>
 
@@ -46,21 +51,28 @@
 <nav id="navbar-template-section" class="navbar sticky-top navbar-expand-md">
     <div style="height: 79px"></div>
 </nav>
+<div class="container-fluid">
+    <div class="row">
+        <div class="fill-screen col-12">
 
 
-
-<div class="row-container">
-    <div class="row row-no-padding">
-        <div class="picture-col side-left col-sm-12 col-md-6 ">
-            <img src="../images/tinylogo.png" style="width: 100%"/>
-        </div>
-        <div class="text-bubble-col side-right col-sm-12 col-md-6">
-                   Dospělí
 
         </div>
+          <div class="row content-filler">
+        <div class="col-12">
+
+
+
+        </div>
+
     </div>
 </div>
+<footer class="container-fluid">
+    <div class="row">
+       <h1>FOOTER</h1>
 
+    </div>
+</footer>
 
 </body>
 </html>

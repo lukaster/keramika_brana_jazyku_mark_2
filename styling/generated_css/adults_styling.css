@@ -1,3 +1,7 @@
-
+.fill-screen {
+  background: url(../../images/foto/apo4.jpg) no-repeat center center fixed;
+  background-size: cover;
+  background-position: center;
+}
 
 /*# sourceMappingURL=adults_styling.css.map */
