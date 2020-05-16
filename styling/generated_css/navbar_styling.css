@@ -25,17 +25,25 @@
 @keyframes add-bottom-margin {
   0% {
     margin-bottom: 0;
+    background-color: #537fa6;
+    opacity: 1;
   }
   100% {
     margin-bottom: 20px;
+    background-color: #537fa6;
+    opacity: 0.85;
   }
 }
 @keyframes remove-bottom-margin {
   0% {
     margin-bottom: 20px;
+    background-color: #537fa6;
+    opacity: 0.85;
   }
   100% {
     margin-bottom: 0;
+    background-color: #537fa6;
+    opacity: 1;
   }
 }
 .navbar_has_margin {

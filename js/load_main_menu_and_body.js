@@ -86,7 +86,7 @@ function navbar_resizing_scrolling() {
         if (navbarsize === 'large') {
             $('.navbar-brand').removeClass("turn_navbar_tall").delay(100).addClass("turn_navbar_small");
             $('#navbar-template-section').removeClass("navbar_no_margin").delay(10).addClass("navbar_has_margin");
-            console.log($('.navbar-brand'));
+            //console.log($('.navbar-brand'));
             navbarsize = 'small';
         }
     } else {
