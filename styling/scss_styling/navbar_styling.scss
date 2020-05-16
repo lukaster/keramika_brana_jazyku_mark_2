@@ -36,13 +36,13 @@ $animationnavbarlenght: 1s;
 @keyframes add-bottom-margin {
   0% {
     margin-bottom: 0;
-    background-color: $clightblue;
-    opacity: 1.0;
+    background: rgba(83, 127, 166, 1);
   }
   100% {
     margin-bottom: 20px;
     background-color: $clightblue;
-    opacity: 0.85;
+    background: rgba(83, 127, 166, 0.85);
+
   }
 }
 
@@ -50,13 +50,11 @@ $animationnavbarlenght: 1s;
 @keyframes remove-bottom-margin {
   0% {
     margin-bottom: 20px;
-    background-color: $clightblue;
-    opacity: 0.85;
+    background: rgba(83, 127, 166, 0.85);
   }
   100% {
     margin-bottom: 0;
-    background-color: $clightblue;
-    opacity: 1.0;
+    background: rgba(83, 127, 166, 1);
   }
 }
 
@@ -143,6 +141,7 @@ $animationnavbarlenght: 1s;
       margin: 0 auto;
 
       #nav-logo-picture {
+
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
