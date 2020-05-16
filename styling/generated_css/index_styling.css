@@ -1,8 +1,4 @@
 @media (min-width: 768px) {
-  .container-fluid {
-    border-left: solid #031740;
-    border-right: solid #031740;
-  }
   .container-fluid .row-no-padding [class*=side-] {
     padding-left: 0;
     padding-right: 0;
@@ -19,10 +15,6 @@
   }
 }
 @media (max-width: 767px) {
-  .container-fluid {
-    border-left: solid #031740;
-    border-right: solid #031740;
-  }
   .container-fluid .row-no-padding [class*=side-] {
     padding-left: 0;
     padding-right: 0;

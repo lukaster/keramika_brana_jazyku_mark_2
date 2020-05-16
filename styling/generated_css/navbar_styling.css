@@ -4,7 +4,7 @@
     padding-bottom: 15px;
     height: 99px;
   }
-  20% {
+  50% {
     padding-top: 5px;
     padding-bottom: 5px;
     height: 79px;
@@ -21,7 +21,7 @@
     padding-bottom: 5px;
     height: 79px;
   }
-  20% {
+  50% {
     padding-top: 15px;
     padding-bottom: 15px;
     height: 99px;
@@ -32,16 +32,52 @@
     height: 99px;
   }
 }
+@keyframes add-bottom-margin {
+  0% {
+    margin-bottom: 0;
+  }
+  50% {
+    margin-bottom: 20px;
+  }
+  100% {
+    margin-bottom: 20px;
+  }
+}
+@keyframes remove-bottom-margin {
+  0% {
+    margin-bottom: 20px;
+  }
+  50% {
+    margin-bottom: 0;
+  }
+  100% {
+    margin-bottom: 0;
+  }
+}
+.navbarmarginbottrue {
+  animation-name: add-bottom-margin;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+}
+
+.navbarmarginbotfalse {
+  animation-name: remove-bottom-margin;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+}
+
 .smallnavbar {
   animation-name: change-navbar-to-small;
-  animation-duration: 5s;
+  animation-duration: 2s;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
 }
 
 .bignavbar {
   animation-name: change-navbar-to-large;
-  animation-duration: 5s;
+  animation-duration: 2s;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
 }
@@ -58,10 +94,16 @@
   height: 79px !important;
 }
 
+.navbar_has_margin {
+  margin-bottom: 20px;
+}
+
 #navbar-template-section {
   background-color: #537fa6;
-  border-style: solid;
-  border-color: #031740;
+  border-bottom-style: solid;
+  border-bottom-color: #031740;
+  border-top-style: solid;
+  border-top-color: #031740;
   padding-bottom: 0;
   padding-top: 0;
   padding-left: 5px;

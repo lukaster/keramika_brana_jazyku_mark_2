@@ -4,7 +4,7 @@ $clightyellow: #fcfaf2; // #d9d9d9;
 $clightbeige: #d8d9b8;
 $cdarkbeige: #bfbd9f;
 
-$animationnavbarlenght: 5s;
+$animationnavbarlenght: 2s;
 
 @keyframes change-navbar-to-small {
   0% {
@@ -12,7 +12,7 @@ $animationnavbarlenght: 5s;
     padding-bottom: 15px;
     height: 99px;
   }
-  20% {
+  50% {
     padding-top: 5px;
     padding-bottom: 5px;
     height: 79px;
@@ -30,7 +30,7 @@ $animationnavbarlenght: 5s;
     padding-bottom: 5px;
     height: 79px;
   }
-  20% {
+  50% {
     padding-top: 15px;
     padding-bottom: 15px;
     height: 99px;
@@ -40,6 +40,44 @@ $animationnavbarlenght: 5s;
     padding-bottom: 15px;
     height: 99px;
   }
+}
+
+@keyframes add-bottom-margin {
+  0% {
+    margin-bottom: 0;
+  }
+  50% {
+    margin-bottom: 20px;
+  }
+  100% {
+    margin-bottom: 20px;
+  }
+}
+
+@keyframes remove-bottom-margin {
+  0% {
+    margin-bottom: 20px;
+  }
+  50% {
+    margin-bottom: 0;
+  }
+  100% {
+    margin-bottom: 0;
+  }
+}
+
+.navbarmarginbottrue {
+  animation-name: add-bottom-margin;
+  animation-duration: $animationnavbarlenght;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+}
+
+.navbarmarginbotfalse {
+  animation-name: remove-bottom-margin;
+  animation-duration: $animationnavbarlenght;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
 }
 
 .smallnavbar {
@@ -68,13 +106,20 @@ $animationnavbarlenght: 5s;
   height: 79px !important;
 }
 
+.navbar_has_margin {
+    margin-bottom: 20px;
+}
+
+
 @media (min-width: 768px) {
 }
 
 #navbar-template-section {
   background-color: $clightblue;
-  border-style: solid;
-  border-color: $cdarkblue;
+  border-bottom-style: solid;
+  border-bottom-color: $cdarkblue;
+  border-top-style: solid;
+  border-top-color: $cdarkblue;
   padding-bottom: 0;
   padding-top: 0;
   padding-left: 5px;
