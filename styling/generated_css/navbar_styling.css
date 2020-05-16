@@ -4,11 +4,6 @@
     padding-bottom: 15px;
     height: 99px;
   }
-  50% {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    height: 79px;
-  }
   100% {
     padding-top: 5px;
     padding-bottom: 5px;
@@ -21,11 +16,6 @@
     padding-bottom: 5px;
     height: 79px;
   }
-  50% {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    height: 99px;
-  }
   100% {
     padding-top: 15px;
     padding-bottom: 15px;
@@ -36,9 +26,6 @@
   0% {
     margin-bottom: 0;
   }
-  50% {
-    margin-bottom: 20px;
-  }
   100% {
     margin-bottom: 20px;
   }
@@ -47,51 +34,30 @@
   0% {
     margin-bottom: 20px;
   }
-  50% {
-    margin-bottom: 0;
-  }
   100% {
     margin-bottom: 0;
   }
 }
-.navbarmarginbottrue {
-  animation-name: add-bottom-margin;
-  animation-duration: 2s;
-  animation-fill-mode: forwards;
-  animation-iteration-count: infinite;
+.navbar_has_margin {
+  -webkit-animation: add-bottom-margin 1s 1 linear both;
 }
 
-.navbarmarginbotfalse {
-  animation-name: remove-bottom-margin;
-  animation-duration: 2s;
-  animation-fill-mode: forwards;
-  animation-iteration-count: infinite;
+.navbar_no_margin {
+  -webkit-animation: remove-bottom-margin 1s 1 linear both;
 }
 
-.smallnavbar {
-  animation-name: change-navbar-to-small;
-  animation-duration: 2s;
-  animation-fill-mode: forwards;
-  animation-iteration-count: infinite;
+.turn_navbar_small {
+  -webkit-animation: change-navbar-to-small 1s 1 linear both;
 }
 
-.bignavbar {
-  animation-name: change-navbar-to-large;
-  animation-duration: 2s;
-  animation-fill-mode: forwards;
-  animation-iteration-count: infinite;
+.turn_navbar_tall {
+  -webkit-animation: change-navbar-to-large 1s 1 linear both;
 }
 
 .bignavbarfinal {
   padding-top: 15px !important;
   padding-bottom: 15px !important;
   height: 99px !important;
-}
-
-.smallnavbarfinal {
-  padding-top: 5px !important;
-  padding-bottom: 5px !important;
-  height: 79px !important;
 }
 
 .navbar_has_margin {
@@ -109,10 +75,15 @@
   padding-left: 5px;
   color: #fcfaf2;
 }
+#navbar-template-section .navbar-brand {
+  padding-top: 15px !important;
+  padding-bottom: 15px !important;
+  height: 99px !important;
+}
+#navbar-template-section #language-dropdown {
+  background-color: #fcfaf2;
+}
 @media (min-width: 768px) {
-  #navbar-template-section #language-dropdown {
-    background-color: #fcfaf2;
-  }
   #navbar-template-section .navbar-brand {
     display: block;
     margin: 0 auto;
@@ -129,8 +100,10 @@
   }
 }
 @media (max-width: 767px) {
+  #navbar-template-section {
+    text-align: center;
+  }
   #navbar-template-section #language-dropdown {
-    background-color: #fcfaf2;
     text-align: center;
   }
   #navbar-template-section .navbar-brand {
@@ -161,6 +134,7 @@
 .nav-link:hover {
   color: #031740;
 }
+
 #language-dropdown #czech-flag {
   width: 20px;
   margin-top: 7px;
@@ -173,10 +147,6 @@
 }
 #language-dropdown .language_dropdown_button {
   color: #031740;
-}
-
-.navbar .navbar-collapse {
-  text-align: center;
 }
 
 /*# sourceMappingURL=navbar_styling.css.map */

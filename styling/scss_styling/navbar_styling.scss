@@ -4,18 +4,13 @@ $clightyellow: #fcfaf2; // #d9d9d9;
 $clightbeige: #d8d9b8;
 $cdarkbeige: #bfbd9f;
 
-$animationnavbarlenght: 2s;
+$animationnavbarlenght: 1s;
 
 @keyframes change-navbar-to-small {
   0% {
     padding-top: 15px;
     padding-bottom: 15px;
     height: 99px;
-  }
-  50% {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    height: 79px;
   }
   100% {
     padding-top: 5px;
@@ -30,68 +25,49 @@ $animationnavbarlenght: 2s;
     padding-bottom: 5px;
     height: 79px;
   }
-  50% {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    height: 99px;
-  }
   100% {
     padding-top: 15px;
     padding-bottom: 15px;
     height: 99px;
   }
 }
+
 
 @keyframes add-bottom-margin {
   0% {
     margin-bottom: 0;
   }
-  50% {
-    margin-bottom: 20px;
-  }
   100% {
     margin-bottom: 20px;
   }
 }
+
 
 @keyframes remove-bottom-margin {
   0% {
     margin-bottom: 20px;
   }
-  50% {
-    margin-bottom: 0;
-  }
   100% {
     margin-bottom: 0;
   }
 }
 
-.navbarmarginbottrue {
-  animation-name: add-bottom-margin;
-  animation-duration: $animationnavbarlenght;
-  animation-fill-mode: forwards;
-  animation-iteration-count: infinite;
+
+.navbar_has_margin {
+  -webkit-animation: add-bottom-margin $animationnavbarlenght 1 linear both;
+
 }
 
-.navbarmarginbotfalse {
-  animation-name: remove-bottom-margin;
-  animation-duration: $animationnavbarlenght;
-  animation-fill-mode: forwards;
-  animation-iteration-count: infinite;
+.navbar_no_margin {
+  -webkit-animation: remove-bottom-margin $animationnavbarlenght 1 linear both;
 }
 
-.smallnavbar {
-  animation-name: change-navbar-to-small;
-  animation-duration: $animationnavbarlenght;
-  animation-fill-mode: forwards;
-  animation-iteration-count: infinite;
+.turn_navbar_small {
+  -webkit-animation: change-navbar-to-small $animationnavbarlenght 1 linear both;
 }
 
-.bignavbar {
-  animation-name: change-navbar-to-large;
-  animation-duration: $animationnavbarlenght;
-  animation-fill-mode: forwards;
-  animation-iteration-count: infinite;
+.turn_navbar_tall {
+  -webkit-animation: change-navbar-to-large $animationnavbarlenght 1 linear both;
 }
 
 .bignavbarfinal {
@@ -100,19 +76,11 @@ $animationnavbarlenght: 2s;
   height: 99px !important;
 }
 
-.smallnavbarfinal {
-  padding-top: 5px !important;
-  padding-bottom: 5px !important;
-  height: 79px !important;
-}
 
 .navbar_has_margin {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
-
-@media (min-width: 768px) {
-}
 
 #navbar-template-section {
   background-color: $clightblue;
@@ -125,11 +93,17 @@ $animationnavbarlenght: 2s;
   padding-left: 5px;
   color: $clightyellow;
 
+  .navbar-brand {
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+    height: 99px !important;
+  }
+
+  #language-dropdown {
+    background-color: $clightyellow;
+  }
 
   @media (min-width: 768px) {
-    #language-dropdown {
-      background-color: $clightyellow;
-    }
 
     .navbar-brand {
       display: block;
@@ -150,9 +124,10 @@ $animationnavbarlenght: 2s;
     }
 
   }
+
   @media (max-width: 767px) {
+    text-align: center;
     #language-dropdown {
-      background-color: $clightyellow;
       text-align: center;
     }
 
@@ -164,7 +139,6 @@ $animationnavbarlenght: 2s;
         left: 50%;
         transform: translateX(-50%);
       }
-
 
     }
 
@@ -189,10 +163,6 @@ $animationnavbarlenght: 2s;
 
 .nav-link:hover {
   color: $cdarkblue;
-
-  #language_drop-li {
-
-  }
 }
 
 
@@ -214,10 +184,7 @@ $animationnavbarlenght: 2s;
   }
 }
 
-.navbar .navbar-collapse {
-  text-align: center;
 
-}
 
 
 
