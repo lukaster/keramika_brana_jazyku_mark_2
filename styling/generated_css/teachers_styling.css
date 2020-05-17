@@ -2,11 +2,16 @@
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
+  background-size: cover;
   background-position: center;
 }
 
 .content-filler {
   min-height: 350px;
+}
+
+#videorow {
+  position: absolute;
 }
 
 #video_wallpaper {
