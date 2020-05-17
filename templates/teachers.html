@@ -43,6 +43,7 @@
     $(function () {
         $(window).on("load resize", function () {
             $(".fill-screen").css("height", window.innerHeight);
+              $("#video_wallpaper").css("height", window.innerHeight*0.8);
         });
 
         $("#video_wallpaper").wallpaper({
@@ -60,7 +61,8 @@
     <div style="height: 79px"></div>
 </nav>
 <div class="container-fluid">
-    <div id="video_wallpaper" class="row">
+    <div id="videorow" class="row">
+        <div  id="video_wallpaper" class="col-12"></div>
     </div>
     <div class="row content-filler">
         <section>
