@@ -9,6 +9,19 @@
   min-height: 350px;
 }
 
+#video_wallpaper {
+  display: block;
+  position: relative;
+  width: auto;
+  height: auto;
+  padding: 100px 0;
+  min-height: 100%;
+  background: no-repeat center center;
+  background-attachment: scroll;
+  background-color: #222;
+  background-size: cover;
+}
+
 @media (min-width: 768px) {
   .fixed-attachment {
     background-attachment: fixed;
