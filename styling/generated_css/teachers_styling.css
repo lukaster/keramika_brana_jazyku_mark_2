@@ -1,39 +1,33 @@
-.picture-col {
-  background-color: aquamarine;
-  padding: 0 !important;
-  margin: 0 !important;
-}
-.picture-col img {
-  width: 100%;
+.fill-screen {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-position: center;
 }
 
-.text-bubble-col {
-  background-color: #bbb;
+.content-filler {
+  min-height: 350px;
 }
 
 @media (min-width: 768px) {
-  .container-fluid .row .side_left {
-    border-left: solid #031740;
-    order: 1;
-  }
-  .container-fluid .row .side_right {
-    border-right: solid #031740;
-    order: 2;
-  }
-
-  .text-bubble-col {
-    text-align: center;
+  .fixed-attachment {
+    background-attachment: fixed;
   }
 }
 @media (max-width: 767px) {
-  .container-fluid .row [class*=side_] {
-    border-left: solid #031740;
-    border-right: solid #031740;
+  .fixed-attachment {
+    background-attachment: scroll;
   }
-
-  .text-bubble-col {
-    text-align: center;
-  }
+}
+section h2 {
+  padding-left: 10%;
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+section p {
+  text-align: center;
+  padding-left: 3%;
+  padding-right: 3%;
 }
 
 /*# sourceMappingURL=teachers_styling.css.map */

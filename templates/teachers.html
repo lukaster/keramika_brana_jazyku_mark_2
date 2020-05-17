@@ -38,31 +38,68 @@
         navbar_resizing_scrolling();
 
     }
+        $(function () {
+        $(window).on("load resize", function () {
+            $(".fill-screen").css("height", window.innerHeight);
+        });
+    });
 </script>
-
-
-<body id="body" class="container-fluid">
-
-    <nav id="navbar-template-section" class="row navbar sticky-top navbar-expand-md">
-        <div style="height: 79px"></div>
-    </nav>
-
-
-
+<body id="body">
+<nav id="navbar-template-section" class="navbar sticky-top navbar-expand-md">
+    <div style="height: 79px"></div>
+</nav>
+<div class="container-fluid">
     <div class="row">
-        <div class="picture-col side_left col-md-6 ">
-            <img src="../images/tinylogo.png" style="width: 100%"/>
-        </div>
-        <div class="text-bubble-col side_right col-md-6">
-            učitelé
+        <div class="fill-screen col-12" style="background-image: url(../images/foto/apo5cropped.jpg)">
+
 
         </div>
     </div>
-</div>
-<footer>
+    <div class="row content-filler">
+                <section>
+            <h2>Lorem ipsum dolor sit amet</h2>
+        <p>Pellentesque pretium lectus id turpis. Duis ante orci, molestie vitae vehicula venenatis, tincidunt ac pede. Nullam sapien sem, ornare ac, nonummy non, lobortis a enim. Aliquam in lorem sit amet leo accumsan lacinia. Pellentesque arcu. Quisque tincidunt scelerisque libero. Maecenas ipsum velit, consectetuer eu lobortis ut, dictum at dui. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam sit amet magna in magna gravida vehicula. Suspendisse nisl. Etiam posuere lacus quis dolor. Fusce suscipit libero eget elit.</p>
+    </section>
+    </div>
     <div class="row">
+        <div class="fill-screen fixed-attachment col-12"
+             style="background-image:url(../images/foto/with_doll_cropped3.jpg)">
+        </div>
+    </div>
+    <div class="row content-filler">
+                <section>
+            <h2>Phasellus et lorem id felis nonummy placerat</h2>
+        <p>Phasellus et lorem id felis nonummy placerat. Fusce tellus. In dapibus augue non sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam sed tellus id magna elementum tincidunt. Quisque tincidunt scelerisque libero. Duis ante orci, molestie vitae vehicula venenatis, tincidunt ac pede. Phasellus enim erat, vestibulum vel, aliquam a, posuere eu, velit. Sed ac dolor sit amet purus malesuada congue. Proin in tellus sit amet nibh dignissim sagittis. Integer pellentesque quam vel velit.</p>
+    </section>
+    </div>
+    <div class="row">
+        <div class="fill-screen fixed-attachment col-12" style="background-image:url(../images/foto/prace/kraken.JPG)">
+        </div>
+    </div>
+    <div class="row content-filler">
+        <section>
+            <h2>In enim a arcu imperdiet malesuada</h2>
+        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nullam dapibus fermentum ipsum. Duis pulvinar. In convallis. Vivamus luctus egestas leo. Mauris suscipit, ligula sit amet pharetra semper, nibh ante cursus purus, vel sagittis velit mauris vel metus. Nullam eget nisl. Nullam feugiat, turpis at pulvinar vulputate, erat libero tristique tellus, nec bibendum odio risus sit amet ante. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>
+    </section>
+    </div>
+    <div class="row">
+        <div class="fill-screen fixed-attachment col-12"
+             style="background-image:url(../images/foto/prace/working_hard_and_happy.JPG)">
+        </div>
+    </div>
+    <div class="row content-filler">
+                <section>
+            <h2>Integer pellentesque quam vel velit</h2>
+        <p>In enim a arcu imperdiet malesuada. Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? Nunc dapibus tortor vel mi dapibus sollicitudin. Duis condimentum augue id magna semper rutrum. Etiam neque. Donec iaculis gravida nulla. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Nullam sit amet magna in magna gravida vehicula.</p>
+    </section>
+    </div>
 
+
+</div>
+<footer class="container-fluid">
+    <div class="row">
         <h1>FOOTER</h1>
+
     </div>
 </footer>
 
