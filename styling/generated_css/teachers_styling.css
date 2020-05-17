@@ -10,10 +10,6 @@
   min-height: 350px;
 }
 
-#videorow {
-  position: absolute;
-}
-
 #video_wallpaper {
   display: block;
   position: relative;

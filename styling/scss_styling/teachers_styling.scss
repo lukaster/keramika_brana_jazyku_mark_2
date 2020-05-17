@@ -9,20 +9,18 @@ $cdarkbeige: #bfbd9f;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
+    background-size: cover;
   background-position: center;
 }
 
 .content-filler {
   min-height: 350px;
 }
-
-#videorow {
-  position: absolute;
-  // height: 50%;
+#videorow{
+//position: absolute;
+ // height: 50%;
 }
-
-#video_wallpaper {
+#video_wallpaper{
   display: block;
   position: relative;
   width: auto;
@@ -38,22 +36,21 @@ $cdarkbeige: #bfbd9f;
 
 @media (min-width: 768px) {
   .fixed-attachment {
-    // border: 5px solid #000;
-    //  width: 50px;
-    //  height: 50px;
-    background-attachment: fixed;
-    // padding-top:79px!important;
-  }
+  // border: 5px solid #000;
+  //  width: 50px;
+  //  height: 50px;
+  background-attachment: fixed;
+  // padding-top:79px!important;
 }
-
+}
 @media (max-width: 767px) {
   .fixed-attachment {
-    // border: 5px solid #000;
-    //  width: 50px;
-    //  height: 50px;
-    background-attachment: scroll;
-    // padding-top:79px!important;
-  }
+  // border: 5px solid #000;
+  //  width: 50px;
+  //  height: 50px;
+  background-attachment: scroll;
+  // padding-top:79px!important;
+}
 
 }
 
