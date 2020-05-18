@@ -16,11 +16,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
             integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
             crossorigin="anonymous"></script>
-    <script src="../js/jquery.fs.wallpaper.js"></script>
     <link rel="icon" href="../images/konikrightsmall.jpg">
     <link rel="stylesheet" href="../styling/generated_css/navbar_styling.css">
     <link rel="stylesheet" href="../styling/generated_css/teachers_styling.css">
-    <link rel="stylesheet" href="../styling/css_lib/jquery.fs.wallpaper.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
@@ -34,35 +32,57 @@
     document.addEventListener('DOMContentLoaded', () => {
         set_bg_color();
         add_navbar_other_path();
+
+
     });
     var navbarsize = 'large';
     window.onscroll = () => {
         navbar_resizing_scrolling();
 
-    }
+    };
     $(function () {
         $(window).on("load resize", function () {
+            var desired_top_width = $('.navbar').css('width');
             $(".fill-screen").css("height", window.innerHeight);
-              $("#video_wallpaper").css("height", window.innerHeight*0.8);
-        });
+            $(".video-container").css("width", desired_top_width);
 
-        $("#video_wallpaper").wallpaper({
-            source: {
-                poster: "../images/video/promoposter.png",
-              //  webm: "../images/video/promovid.webm",
-                mp4: "../images/video/promovid.mp4",
-                ogg: "../images/video/promovid.ogg"
+            //$("#top_picture").css("width",desired_top_width);
+            console.log($('.navbar').css('width'));
+            if (window.innerWidth >= 768) {
+                //console.log("video");
+                $('#top_picture').css("display", "none");
+                $('#top_video').css("display", "block");
+            } else {
+                //console.log("pic");
+                $('#top_video').css("display", "none");
+                $('#top_picture').css("display", "inline-block");
+
             }
         });
     });
+
+
+    //   poster: "../images/video/promoposter.png",
+    //  webm: "../images/video/promovid.webm",
+    //    mp4: "../images/video/promovid.mp4",
+    //    ogg: "../images/video/promovid.ogg"
+
+
 </script>
 <body id="body">
 <nav id="navbar-template-section" class="navbar sticky-top navbar-expand-md">
     <div style="height: 79px"></div>
 </nav>
 <div class="container-fluid">
-    <div id="videorow" class="row">
-        <div  id="video_wallpaper" class="col-12"></div>
+    <div id="top_row" class="row">
+        <div class="video-container col-12">
+            <video id="top_video" autoplay loop muted>
+                <source src="../images/video/promovid.mp4" type="video/mp4">
+            </video>
+
+            <img id="top_picture" class="img-responsive" src="../images/video/promoposter.png"></img>
+
+        </div>
     </div>
     <div class="row content-filler">
         <section>
