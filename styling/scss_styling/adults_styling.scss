@@ -1,9 +1,89 @@
+$cdarkblue: #031740;
+$clightblue: #537fa6;
+$clightyellow: #fcfaf2; // #d9d9d9;
+$clightbeige: #d8d9b8;
+$cdarkbeige: #bfbd9f;
+//todo refactor redundancies away
 
 .fill-screen {
- background: url(../../images/foto/apo4.jpg) no-repeat center center fixed;
- // -webkit-background-size: cover;
-//  -moz-background-size: cover;
- // -o-background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
- background-position: center;
+  background-position: center;
 }
+
+.content-filler {
+  min-height: 350px;
+}
+
+
+@media (min-width: 768px) {
+  .video-container {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+position: absolute;
+    #top_video {
+
+      max-width: 100%;
+         position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+  }
+  #top_row {
+    background-color: cornsilk;//#222;
+    background-size: cover;
+  }
+
+
+  .fixed-attachment {
+    // border: 5px solid #000;
+    //  width: 50px;
+    //  height: 50px;
+    background-attachment: fixed;
+    // padding-top:79px!important;
+  }
+}
+
+@media (max-width: 767px) {
+
+  .video-container {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+
+    #top_picture {
+
+      max-width: 100%;
+    }
+  }
+  #top_row {
+    background-color: #222;
+    background-size: cover;
+  }
+
+  .fixed-attachment {
+    // border: 5px solid #000;
+    //  width: 50px;
+    //  height: 50px;
+    background-attachment: scroll;
+    // padding-top:79px!important;
+  }
+
+}
+
+section {
+  h2 {
+    padding-left: 10%;
+    padding-top: 10px;
+    padding-bottom: 30px;
+  }
+
+  p {
+    text-align: center;
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+
+}
+
