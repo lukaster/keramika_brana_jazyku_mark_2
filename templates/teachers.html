@@ -45,9 +45,14 @@
             var desired_top_width = $('.navbar').css('width');
             $(".fill-screen").css("height", window.innerHeight);
             $(".video-container").css("width", desired_top_width);
+            var topvideo_height =  $('#top_video').css("height");
+            var inner_height = window.innerHeight;
+
+            console.log(topvideo_height);
+            $(".video-container").css("height", topvideo_height*1);
 
             //$("#top_picture").css("width",desired_top_width);
-            console.log($('.navbar').css('width'));
+            //console.log($('.navbar').css('width'));
             if (window.innerWidth >= 768) {
                 //console.log("video");
                 $('#top_picture').css("display", "none");

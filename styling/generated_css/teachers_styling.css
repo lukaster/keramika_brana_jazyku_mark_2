@@ -14,9 +14,13 @@
   .video-container {
     padding-right: 0 !important;
     padding-left: 0 !important;
+    position: absolute;
   }
   .video-container #top_video {
     max-width: 100%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   #top_row {
