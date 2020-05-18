@@ -35,7 +35,7 @@ function add_navbar() {
     console.log("navbar loaded")
 }
 
-function add_navbar_other_path() {
+function add_navbar_other_path(current_page_id) {
     $.get('../templates/navbar_other_path.html', function (data, status) {
         //console.log(data);
         //$('#navbar-template-section').html(data);
@@ -48,6 +48,7 @@ function add_navbar_other_path() {
             $data.find('#teachers_menu').text("Teachers");
             $data.find('#navbarDropdown').text("Language");
         }
+        $data.find("#" + current_page_id).css("color", cdarkblue).css("font-weight", "bold");
         $('#navbar-template-section').html($data.unwrap());
     });
     //var template_section = $('#navbar-template-section').load('templates/navbar.html');
