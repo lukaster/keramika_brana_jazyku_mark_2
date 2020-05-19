@@ -1,0 +1,23 @@
+.keramika-footer {
+  background-color: #031740;
+  border-top: #6C94B4;
+  border-top-style: solid;
+  border-top-width: 15px;
+  height: 250px;
+  position: relative;
+}
+.keramika-footer h1 {
+  color: #92bde0;
+}
+.keramika-footer h2 {
+  color: #6C94B4;
+}
+.keramika-footer img {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  bottom: 10px;
+  height: 110px;
+}
+
+/*# sourceMappingURL=footer_styling.css.map */

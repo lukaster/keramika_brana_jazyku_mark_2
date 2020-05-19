@@ -1,0 +1,27 @@
+$cdarkblue: #031740;
+$clightblue: #537fa6;
+$clightyellow: #fcfaf2; // #d9d9d9;
+$clightbeige: #d8d9b8;
+$cdarkbeige: #bfbd9f;
+$cceadetblue:#6C94B4;
+$clighterceadetblue:#92bde0;
+
+.keramika-footer{
+  background-color: $cdarkblue;
+  border-top: $cceadetblue;
+  border-top-style: solid;
+  border-top-width: 15px;
+  height: 250px;
+  position: relative;
+h1{color: $clighterceadetblue}
+
+h2{color: $cceadetblue}
+  img{
+    position: absolute;
+    right:10px;
+    bottom: 10px;
+    bottom: 10px;
+    height: 110px;
+
+  }
+}
