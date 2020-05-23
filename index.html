@@ -19,7 +19,7 @@
     <link rel="icon" href="images/konikrightsmall.jpg">
     <link rel="stylesheet" href="styling/generated_css/navbar_styling.css">
     <link rel="stylesheet" href="styling/generated_css/index_styling.css">
-        <link rel="stylesheet" href="styling/generated_css/footer_styling.css">
+    <link rel="stylesheet" href="styling/generated_css/footer_styling.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
@@ -33,7 +33,7 @@
     document.addEventListener('DOMContentLoaded', () => {
         set_bg_color();
         add_navbar();
-           add_footer('templates/footer.html','images/logoinstagramkonik/logokonikoktagoncroppedleft4.png');
+        add_footer('templates/footer.html', 'images/logoinstagramkonik/logokonikoktagoncroppedleft4.png');
 
 
     });
@@ -41,7 +41,18 @@
     window.onscroll = () => {
         navbar_resizing_scrolling();
 
-    }
+    };
+    $(function () {
+        $(window).on("load resize", function () {
+            $fill_screen = $('.fill-screen')
+            var fill_screen_width = $fill_screen.css('width');//
+            var fill_screen_height = (parseInt(fill_screen_width.replace(/px/, "")) * 0.82) + "px";
+            console.log(fill_screen_height)
+            $fill_screen.css("height", fill_screen_height);
+
+        });
+    });
+
 
 </script>
 
@@ -53,55 +64,86 @@
 
 <div class="container-fluid">
     <div class="row row-no-padding">
-        <div class="picture-col side-right col-md-6 ">
-            <img src="images/tinylogo.png" style="width: 100%"/>
+        <div class="fill-screen picture-col side-right col-md-6 "
+             style="background-image: url(images/used_pictures/girl_with_cat_bowl.jpg)">
         </div>
         <div class="text-bubble-col side-left col-md-6">
-            blablabla 1
-
+            <div class="inside-text-container">
+                <article class="text_square" id="article-children">
+                    <h1>Dětské kroužky</h1>
+                    <h4>Kroužky pro děti ze ZŠ Brány jazyků</h4>
+                    <br>
+                    <button class="button" onclick="location.href='templates/children.html'">Více informací</button>
+                </article>
+            </div>
         </div>
     </div>
 
     <div class="row row-no-padding">
-        <div class="picture-col side-left col-md-6 ">
-            <img src="images/tinylogo.png" style="width: 100%"/>
+        <div class="fill-screen picture-col side-left col-md-6 "
+             style="background-image: url(images/used_pictures/adults_class.jpg)">
         </div>
         <div class="text-bubble-col side-right col-md-6">
-            blablabla 2
+                  <div class="inside-text-container">
+                <article class="text_square" id="article-adults">
+                    <h1>Kurzy pro dospělé</h1>
+                    <h4>Podvečerní lekce keramiky</h4>
+                    <br>
+                    <button class="button" onclick="location.href='templates/adults.html'">Více informací</button>
+                </article>
+            </div>
 
         </div>
     </div>
 
-    <div class="row row-no-padding">
-        <div class="picture-col side-right col-md-6">
-            <img src="images/tinylogo.png" style="width: 100%"/>
+   <div class="row row-no-padding">
+        <div class="fill-screen picture-col side-right col-md-6 "
+             style="background-image: url(images/used_pictures/teacher.jpg)">
         </div>
         <div class="text-bubble-col side-left col-md-6">
-            blablabla 3
-
+            <div class="inside-text-container">
+                <article class="text_square" id="article-teachers">
+                    <h1>Učitelé</h1>
+                    <h4>Lektoři vedoucí keramické kurzy</h4>
+                    <br>
+                    <button class="button" onclick="location.href='templates/teachers.html'">Více informací</button>
+                </article>
+            </div>
         </div>
     </div>
-
-    <div class="row row-no-padding">
-        <div class="picture-col side-left col-md-6 ">
-            <img src="images/tinylogo.png" style="width: 100%"/>
+  <div class="row row-no-padding">
+        <div class="fill-screen picture-col side-left col-md-6 "
+             style="background-image: url(images/used_pictures/christmass.jpg)">
         </div>
         <div class="text-bubble-col side-right col-md-6">
-            blablabla 4
+                  <div class="inside-text-container">
+                <article class="text_square" id="article-christmas">
+                    <h1>Vánoční trhy</h1>
+                    <h4>Každoročně na podporu charity</h4>
+                    <br>
+                    <button class="button" onclick="location.href=''">Více informací</button>
+                </article>
+            </div>
 
         </div>
     </div>
 
-    <div class="row row-no-padding">
-        <div class="picture-col side-right col-md-6">
-            <img src="images/tinylogo.png" style="width: 100%"/>
+ <div class="row row-no-padding">
+        <div class="fill-screen picture-col side-right col-md-6 "
+             style="background-image: url(images/used_pictures/before_and_after2.png)">
         </div>
         <div class="text-bubble-col side-left col-md-6">
-            blablabla 5
-
+            <div class="inside-text-container">
+                <article class="text_square" id="article-about-us">
+                    <h1>O naší dílně</h1>
+                    <h4>Jak celý projekt vznikal</h4>
+                    <br>
+                    <button class="button" onclick="location.href=''">Více informací</button>
+                </article>
+            </div>
         </div>
     </div>
-        <div id="footer-section" class="row keramika-footer">
+    <div id="footer-section" class="row keramika-footer">
 
     </div>
 </div>

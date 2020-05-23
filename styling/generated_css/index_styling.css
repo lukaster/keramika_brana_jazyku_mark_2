@@ -1,4 +1,45 @@
+.fill-screen {
+  background-size: cover;
+  background-position: center;
+}
+
+.button {
+  background-color: #ddd;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+  border-style: solid;
+  border-color: #fcfaf2;
+}
+
+.button:hover {
+  background-color: #f1f1f1;
+  font-weight: bold;
+  padding: 10px 22px;
+  border-style: solid;
+  border-color: #ddd;
+}
+
 @media (min-width: 768px) {
+  .text-bubble-col {
+    position: relative !important;
+  }
+  .text-bubble-col .inside-text-container {
+    position: absolute;
+    top: 50%;
+    height: 10em;
+    margin-top: -7em;
+    left: 50%;
+    width: 20em;
+    margin-left: -10em;
+  }
+
   .container-fluid .row-no-padding [class*=side-] {
     padding-left: 0;
     padding-right: 0;
@@ -15,6 +56,16 @@
   }
 }
 @media (max-width: 767px) {
+  .text-bubble-col {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .text_square {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
   .container-fluid .row-no-padding [class*=side-] {
     padding-left: 0;
     padding-right: 0;
