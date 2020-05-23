@@ -35,6 +35,26 @@ function add_navbar() {
     console.log("navbar loaded")
 }
 
+function add_footer(footer_path, image_path) {
+    $.get(footer_path, function (data, status) {
+        //console.log(data);
+        //$('#navbar-template-section').html(data);
+        var $data = $(data);
+        //console.log($data);
+        //console.log($($data[2]));
+       // console.log( $data.find('#footer_logo'));
+        //console.log($data.find('#footer_logo'));
+        $($data[2]).attr('src',image_path); //for some reason finding id does not work... todo refactor this
+        //console.log($data.find('#footer_logo').attr('src'));
+        if (language === 'en') {
+            //console.log($data.find('#children_menu').text());
+
+        }
+        $('#footer-section').html($data.unwrap());
+    });
+    console.log("footer loaded")
+}
+
 function add_navbar_other_path(current_page_id) {
     $.get('../templates/navbar_other_path.html', function (data, status) {
         //console.log(data);

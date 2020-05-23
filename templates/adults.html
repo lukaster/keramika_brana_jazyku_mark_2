@@ -33,6 +33,7 @@
     document.addEventListener('DOMContentLoaded', () => {
         set_bg_color();
         add_navbar_other_path("adults_menu");
+        add_footer('footer.html','../images/logoinstagramkonik/logokonikoktagoncroppedleft4.png');
 
 
     });
@@ -45,15 +46,15 @@
         $(window).on("load resize", function () {
             var desired_top_width = $('.navbar').css('width');
             var navbar_height = parseInt($('.navbar').css('height'), 10);
-            var video_height =  (window.innerHeight-navbar_height)*0.5;
-            $(".fill-screen").css("height", window.innerHeight*0.8);
+            var video_height = (window.innerHeight - navbar_height) * 0.5;
+            $(".fill-screen").css("height", window.innerHeight * 0.8);
             $(".video-container").css("width", desired_top_width);
-            $(".video-container").css("height",video_height);
-            $('#top_video').css("height",parseInt( $(".video-container").css("height"),10));
-           // var inner_height = window.innerHeight;
+            $(".video-container").css("height", video_height);
+            $('#top_video').css("height", parseInt($(".video-container").css("height"), 10));
+            // var inner_height = window.innerHeight;
 
-         // console.log(topvideo_height);
-          //  $(".video-container").css("height", topvideo_height*0.5);
+            // console.log(topvideo_height);
+            //  $(".video-container").css("height", topvideo_height*0.5);
 
             //$("#top_picture").css("width",desired_top_width);
             //console.log($('.navbar').css('width'));
@@ -151,10 +152,8 @@
         </section>
     </div>
 
-    <div class="row keramika-footer">
-        <h1>FOOTER</h1>
-        <img src="../images/logoinstagramkonik/logokonikoktagoncroppedleft4.png">
-     <h2>FOOTER</h2>
+        <div id="footer-section" class="row keramika-footer">
+
     </div>
 </div>
 
