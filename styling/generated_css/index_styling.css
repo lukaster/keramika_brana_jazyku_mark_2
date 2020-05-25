@@ -60,14 +60,17 @@
   .text-bubble-col {
     text-align: center;
   }
+  .text-bubble-col .button {
+    margin-top: 28px;
+  }
 }
 @media (max-width: 767px) {
   html, body {
-    scroll-snap-type: y proximity;
-    scroll-padding-block-start: 83px;
+    scroll-snap-type: y mandatory;
+    scroll-padding-block-start: 81px;
   }
 
-  .row-no-padding {
+  .fill-screen {
     scroll-snap-align: start;
   }
 
