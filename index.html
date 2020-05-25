@@ -38,17 +38,51 @@
 
     });
     var navbarsize = 'large';
-    window.onscroll = () => {
-        navbar_resizing_scrolling();
+    // window.onscroll = () => {
+    // navbar_resizing_scrolling();
 
-    };
+    // };
     $(function () {
         $(window).on("load resize", function () {
-            $fill_screen = $('.fill-screen')
+            $fill_screen = $('.fill-screen');
             var fill_screen_width = $fill_screen.css('width');//
-            var fill_screen_height = (parseInt(fill_screen_width.replace(/px/, "")) * 0.82) + "px";
-            console.log(fill_screen_height)
+            var fill_screen_height_int = parseInt(fill_screen_width.replace(/px/, "")) * 0.82;
+            var fill_screen_height = (fill_screen_height_int) + "px";
+            //console.log(fill_screen_height)
             $fill_screen.css("height", fill_screen_height);
+            //console.log(window.innerWidth);
+            if (window.innerWidth < 768) { //so each screen of mobile device has one section at the time shown
+                var total_window_height = window.innerHeight;
+                console.log(total_window_height);
+                var navbar_height_int = parseInt($('#navbar-template-section').css('height').replace(/px/, ""));
+                console.log(navbar_height_int);
+
+                $('.text-bubble-col').each(function (index, item) {
+                    var $text_bubble = $(item);
+                        console.log('-----------------------------')
+                    console.log($text_bubble)
+                    console.log($text_bubble.children('.inside-text-container'));
+                    var inside_text_container_height_int = parseInt($text_bubble.children('.inside-text-container').css('height').replace(/px/, ""));
+                    console.log(inside_text_container_height_int);
+                    console.log($text_bubble.css('padding-top'));
+                    var leftover_window_height = ((total_window_height - navbar_height_int - fill_screen_height_int - inside_text_container_height_int) / 2)+2;
+                    console.log(leftover_window_height);
+                    if (leftover_window_height > 0) {
+                        var text_padding = leftover_window_height + "px";
+                        console.log($('.text-bubble-col'));
+
+
+                        $text_bubble.css({
+                            "padding-top": text_padding,
+                            "padding-bottom": text_padding
+                        });
+                    }
+                    console.log($text_bubble.css('padding-top'));
+                });
+
+
+            }
+
 
         });
     });
@@ -64,10 +98,10 @@
 
 <div class="container-fluid">
     <div class="row row-no-padding">
-        <div class="fill-screen picture-col side-right col-md-6 "
+        <div class="fill-screen picture-col order-md-2 col-md-6 "
              style="background-image: url(images/used_pictures/girl_with_cat_bowl.jpg)">
         </div>
-        <div class="text-bubble-col side-left col-md-6">
+        <div class="text-bubble-col order-md-1 col-md-6">
             <div class="inside-text-container">
                 <article class="text_square" id="article-children">
                     <h1>Dětské kroužky</h1>
@@ -80,11 +114,11 @@
     </div>
 
     <div class="row row-no-padding">
-        <div class="fill-screen picture-col side-left col-md-6 "
+        <div class="fill-screen picture-col order-md-1 col-md-6 "
              style="background-image: url(images/used_pictures/adults_class.jpg)">
         </div>
-        <div class="text-bubble-col side-right col-md-6">
-                  <div class="inside-text-container">
+        <div class="text-bubble-col order-md-2 col-md-6">
+            <div class="inside-text-container">
                 <article class="text_square" id="article-adults">
                     <h1>Kurzy pro dospělé</h1>
                     <h4>Podvečerní lekce keramiky</h4>
@@ -96,11 +130,11 @@
         </div>
     </div>
 
-   <div class="row row-no-padding">
-        <div class="fill-screen picture-col side-right col-md-6 "
+    <div class="row row-no-padding">
+        <div class="fill-screen picture-col order-md-2 col-md-6 "
              style="background-image: url(images/used_pictures/teacher.jpg)">
         </div>
-        <div class="text-bubble-col side-left col-md-6">
+        <div class="text-bubble-col order-md-1 col-md-6">
             <div class="inside-text-container">
                 <article class="text_square" id="article-teachers">
                     <h1>Učitelé</h1>
@@ -111,12 +145,12 @@
             </div>
         </div>
     </div>
-  <div class="row row-no-padding">
-        <div class="fill-screen picture-col side-left col-md-6 "
+    <div class="row row-no-padding">
+        <div class="fill-screen picture-col order-md-1 col-md-6 "
              style="background-image: url(images/used_pictures/christmass.jpg)">
         </div>
-        <div class="text-bubble-col side-right col-md-6">
-                  <div class="inside-text-container">
+        <div class="text-bubble-col order-md-2 col-md-6">
+            <div class="inside-text-container">
                 <article class="text_square" id="article-christmas">
                     <h1>Vánoční trhy</h1>
                     <h4>Každoročně na podporu charity</h4>
@@ -128,11 +162,11 @@
         </div>
     </div>
 
- <div class="row row-no-padding">
-        <div class="fill-screen picture-col side-right col-md-6 "
+    <div class="row row-no-padding">
+        <div class="fill-screen picture-col order-md-2 col-md-6 "
              style="background-image: url(images/used_pictures/before_and_after2.png)">
         </div>
-        <div class="text-bubble-col side-left col-md-6">
+        <div class="text-bubble-col order-md-1 col-md-6">
             <div class="inside-text-container">
                 <article class="text_square" id="article-about-us">
                     <h1>O naší dílně</h1>

@@ -5,9 +5,14 @@ $clightbeige: #d8d9b8;
 $cdarkbeige: #bfbd9f;
 //todo refactor redundancies away
 
+
 .fill-screen {
   background-size: cover;
   background-position: center;
+}
+
+.row {
+  scroll-snap-stop: always;
 }
 
 .button {
@@ -23,7 +28,6 @@ $cdarkbeige: #bfbd9f;
   border-radius: 16px;
   border-style: solid;
   border-color: $clightyellow;
-
 }
 
 .button:hover {
@@ -36,43 +40,34 @@ $cdarkbeige: #bfbd9f;
 
 
 @media (min-width: 768px) {
-.text-bubble-col {
-  position: relative !important;
 
-  .inside-text-container {
-    position: absolute;
-    top: 50%;
-    height: 10em;
-    margin-top: -7em;
-    left: 50%;
-    width: 20em;
-    margin-left: -10em;
+  html, body {
+    scroll-snap-type: y proximity;
+    scroll-padding-block-start: 99px;
   }
 
-}
+  .row-no-padding {
+    scroll-snap-align: start;
+  }
 
+  .keramika-footer {
+    scroll-snap-align: end;
 
-  .container-fluid {
+  }
+  .text-bubble-col {
+    position: relative !important;
 
-    //border-left: solid $cdarkblue;
-    //border-right: solid $cdarkblue;
-
-    .row-no-padding {
-
-      [class*="side-"] {
-        padding-left: 0;
-        padding-right: 0;
-      }
-
-      .side-left {
-        order: 1;
-      }
-
-      .side-right {
-        order: 2;
-      }
+    .inside-text-container {
+      position: absolute;
+      top: 50%;
+      height: 10em;
+      margin-top: -7em;
+      left: 50%;
+      width: 20em;
+      margin-left: -10em;
     }
   }
+
 
   .text-bubble-col {
     text-align: center;
@@ -81,33 +76,20 @@ $cdarkbeige: #bfbd9f;
 
 
 @media (max-width: 767px) {
-.text-bubble-col {
- padding-top: 15px;
-  padding-bottom: 15px;
-
-}
-
-  .text_square {
-    padding-top: 15px;
-    padding-bottom: 15px;
+  html, body {
+    scroll-snap-type: y proximity; //mandatory;
+    scroll-padding-block-start: 83px;
   }
 
+  .row-no-padding {
+    scroll-snap-align: start;
+  }
 
-  .container-fluid {
-
-    //border-left: solid $cdarkblue;
-    //border-right: solid $cdarkblue;
-
-    .row-no-padding {
-      [class*="side-"] {
-        padding-left: 0;
-        padding-right: 0;
-      }
-    }
+  .keramika-footer {
+    scroll-snap-align: end;
   }
 
   .text-bubble-col {
     text-align: center;
   }
-
 }

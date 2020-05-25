@@ -4,88 +4,6 @@ $clightyellow: #fcfaf2; // #d9d9d9;
 $clightbeige: #d8d9b8;
 $cdarkbeige: #bfbd9f;
 
-$animationnavbarlenght: 1s;
-
-@keyframes change-navbar-to-small {
-  0% {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    height: 99px;
-  }
-  100% {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    height: 79px;
-  }
-}
-
-@keyframes change-navbar-to-large {
-  0% {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    height: 79px;
-  }
-  100% {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    height: 99px;
-  }
-}
-
-
-@keyframes add-bottom-margin {
-  0% {
-    margin-bottom: 0;
-    background: rgba(83, 127, 166, 1);
-  }
-  100% {
-    margin-bottom: 20px;
-    background-color: $clightblue;
-    background: rgba(83, 127, 166, 0.85);
-
-  }
-}
-
-
-@keyframes remove-bottom-margin {
-  0% {
-    margin-bottom: 20px;
-    background: rgba(83, 127, 166, 0.85);
-  }
-  100% {
-    margin-bottom: 0;
-    background: rgba(83, 127, 166, 1);
-  }
-}
-
-
-.navbar_has_margin {
-  -webkit-animation: add-bottom-margin $animationnavbarlenght 1 linear both;
-
-}
-
-.navbar_no_margin {
-  -webkit-animation: remove-bottom-margin $animationnavbarlenght 1 linear both;
-}
-
-.turn_navbar_small {
-  -webkit-animation: change-navbar-to-small $animationnavbarlenght 1 linear both;
-}
-
-.turn_navbar_tall {
-  -webkit-animation: change-navbar-to-large $animationnavbarlenght 1 linear both;
-}
-
-.bignavbarfinal {
-  padding-top: 15px !important;
-  padding-bottom: 15px !important;
-  height: 99px !important;
-}
-
-
-.navbar_has_margin {
-  margin-bottom: 20px;
-}
 
 
 #navbar-template-section {
@@ -114,6 +32,9 @@ $animationnavbarlenght: 1s;
     .navbar-brand {
       display: block;
       margin: 0 auto;
+      padding-top: 15px !important;
+      padding-bottom: 15px !important;
+      height: 99px !important;
 
       #nav-logo-picture {
         margin-right: 10px
@@ -133,12 +54,19 @@ $animationnavbarlenght: 1s;
 
   @media (max-width: 767px) {
     text-align: center;
+         background-color: $clightblue;
+    background: rgba(83, 127, 166, 0.85);
+
     #language-dropdown {
       text-align: center;
     }
 
     .navbar-brand {
       margin: 0 auto;
+          padding-top: 5px !important;
+    padding-bottom: 5px !important;
+    height:79px !important;
+
 
       #nav-logo-picture {
 
