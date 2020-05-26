@@ -1,7 +1,7 @@
 <a class="navbar-brand bignavbarfinal" href="index.html"><img id="nav-logo-picture"
-                                               src="images/keramika_logo/keramikaLogo2higherYellow.png"
-                                               width="180"
-                                               class="d-inline-block align-top" alt=""/></a>
+                                                              src="images/keramika_logo/keramikaLogo2higherYellow.png"
+                                                              width="180"
+                                                              class="d-inline-block align-top" alt=""/></a>
 <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse"
         data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,26 +11,41 @@
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul id="menu_left" class="navbar-nav mr-auto">
         <li class="nav-item">
-            <a id="children_menu" class="nav-link" href="templates/children.html">Děti<span class="sr-only">(current)</span></a>
+            <a class="children_menu cs-lang nav-link" href="templates/children.html">Děti<span
+                    class="sr-only">(current)</span></a>
+            <a class="children_menu en-lang nav-link" href="templates/children.html" style="display: none">Children<span
+                    class="sr-only">(current)</span></a>
+
         </li>
         <li class="nav-item">
-            <a id="adults_menu"  class="nav-link" href="templates/adults.html">Dospělí</a>
+            <a class="adults_menu cs-lang nav-link" href="templates/adults.html">Dospělí</a>
+            <a class="adults_menu en-lang nav-link" href="templates/adults.html" style="display: none">Adults</a>
+
         </li>
         <li class="nav-item">
-            <a id="teachers_menu"  class="nav-link" href="templates/teachers.html">Učitelé</a>
+            <a class="teachers_menu cs-lang nav-link" href="templates/teachers.html">Učitelé</a>
+            <a class="teachers_menu en-lang nav-link" href="templates/teachers.html" style="display: none">Teachers</a>
         </li>
         <li id="language_drop-li" class="nav-item dropdown">
-            <a  id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+            <a class="navbarDropdown cs-lang nav-link dropdown-toggle" href="#" role="button"
+               data-toggle="dropdown"
                aria-haspopup="true" aria-expanded="false">
                 Jazyk
             </a>
+            <a class="navbarDropdown en-lang nav-link dropdown-toggle" href="#" role="button"
+               data-toggle="dropdown" style="display: none"
+               aria-haspopup="true" aria-expanded="false">
+                Language
+            </a>
             <div id="language-dropdown" class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <button id="cs" onclick="navbar_cs()" class="dropdown-item language_dropdown_button" type="button">cs <img id="czech-flag"
-                                                                                                     src="images/czech_flag.PNG"
-                                                                                                     class="d-inline-block align-top"
-                                                                                                     alt=""/>
+                <button id="cs" onclick="set_lang_cs();switch_page_language()"
+                        class="dropdown-item language_dropdown_button" type="button">cs <img id="czech-flag"
+                                                                                             src="images/czech_flag.PNG"
+                                                                                             class="d-inline-block align-top"
+                                                                                             alt=""/>
                 </button>
-                <button id="en" onclick="navbar_en()" class="dropdown-item language_dropdown_button" type="button">en <img
+                <button id="en" onclick="set_lang_en();switch_page_language()"
+                        class="dropdown-item language_dropdown_button" type="button">en <img
                         id="english-flag"
                         src="images/english_flag.PNG"
                         class="d-inline-block align-top"

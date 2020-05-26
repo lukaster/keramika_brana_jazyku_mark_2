@@ -29,64 +29,18 @@
 <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 
 <script src="js/load_main_menu_and_body.js"></script>
+<script src="js/index_page_scripts.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         set_bg_color();
-        add_navbar();
+        add_navbar('templates/navbar.html', '');
         add_footer('templates/footer.html', 'images/logoinstagramkonik/logokonikoktagoncroppedleft4.png');
-
-
+        switch_page_language();
     });
-    var navbarsize = 'large';
-    // window.onscroll = () => {
-    // navbar_resizing_scrolling();
 
-    // };
     $(function () {
-        $(window).on("load resize", function () {
-            $fill_screen = $('.fill-screen');
-            var fill_screen_width = $fill_screen.css('width');//
-            var fill_screen_height_int = parseInt(fill_screen_width.replace(/px/, "")) * 0.82;
-            var fill_screen_height = (fill_screen_height_int) + "px";
-            //console.log(fill_screen_height)
-            $fill_screen.css("height", fill_screen_height);
-            //console.log(window.innerWidth);
-            if (window.innerWidth < 768) { //so each screen of mobile device has one section at the time shown
-                var total_window_height = window.innerHeight;
-                console.log(total_window_height);
-                var navbar_height_int = parseInt($('#navbar-template-section').css('height').replace(/px/, ""));
-                console.log(navbar_height_int);
-
-                $('.text-bubble-col').each(function (index, item) {
-                    var $text_bubble = $(item);
-                        console.log('-----------------------------')
-                    console.log($text_bubble)
-                    console.log($text_bubble.children('.inside-text-container'));
-                    var inside_text_container_height_int = parseInt($text_bubble.children('.inside-text-container').css('height').replace(/px/, ""));
-                    console.log(inside_text_container_height_int);
-                    console.log($text_bubble.css('padding-top'));
-                    var leftover_window_height = ((total_window_height - navbar_height_int - fill_screen_height_int - inside_text_container_height_int) / 2)+2;
-                    console.log(leftover_window_height);
-                    if (leftover_window_height > 0) {
-                        var text_padding = leftover_window_height + "px";
-                        console.log($('.text-bubble-col'));
-
-
-                        $text_bubble.css({
-                            "padding-top": text_padding,
-                            "padding-bottom": text_padding
-                        });
-                    }
-                    console.log($text_bubble.css('padding-top'));
-                });
-
-
-            }
-
-
-        });
+        $(window).on("load resize", resize_index_page);
     });
-
 
 </script>
 
@@ -104,9 +58,12 @@
         <div class="text-bubble-col order-md-1 col-md-6">
             <div class="inside-text-container">
                 <article class="text_square" id="article-children">
-                    <h1>Dětské kroužky</h1>
-                    <h4>Kroužky pro děti ze ZŠ Brány jazyků</h4>
-                    <button class="button" onclick="location.href='templates/children.html'">Více informací</button>
+                    <h1 class="cs-lang">Dětské kroužky</h1>
+                    <h1 class="en-lang" style="display: none">Children's classes</h1>
+                    <h4 class="cs-lang">Kroužky pro děti ze ZŠ Brány jazyků</h4>
+                    <h4 class="en-lang" style="display: none">Pottery classes for kids from ZŠ Brána jazyků</h4>
+                    <button class="more-info-button" onclick="location.href='templates/children.html'">Více informací
+                    </button>
                 </article>
             </div>
         </div>
@@ -119,9 +76,12 @@
         <div class="text-bubble-col order-md-2 col-md-6">
             <div class="inside-text-container">
                 <article class="text_square" id="article-adults">
-                    <h1>Kurzy pro dospělé</h1>
-                    <h4>Podvečerní lekce keramiky</h4>
-                    <button class="button" onclick="location.href='templates/adults.html'">Více informací</button>
+                    <h1 class="cs-lang">Kurzy pro dospělé</h1>
+                    <h1 class="en-lang" style="display: none">Classes for adults</h1>
+                    <h4 class="cs-lang">Podvečerní lekce keramiky</h4>
+                    <h4 class="en-lang" style="display: none">Evening pottery classes</h4>
+                    <button class="more-info-button" onclick="location.href='templates/adults.html'">Více informací
+                    </button>
                 </article>
             </div>
 
@@ -135,9 +95,12 @@
         <div class="text-bubble-col order-md-1 col-md-6">
             <div class="inside-text-container">
                 <article class="text_square" id="article-teachers">
-                    <h1>Učitelé</h1>
-                    <h4>Lektoři vedoucí keramické kurzy</h4>
-                    <button class="button" onclick="location.href='templates/teachers.html'">Více informací</button>
+                    <h1 class="cs-lang">Učitelé</h1>
+                    <h1 class="en-lang" style="display: none">Teachers</h1>
+                    <h4 class="cs-lang">Lektoři vedoucí keramické kurzy</h4>
+                    <h4 class="en-lang" style="display: none">Instructors leading ceramic classes</h4>
+                    <button class="more-info-button" onclick="location.href='templates/teachers.html'">Více informací
+                    </button>
                 </article>
             </div>
         </div>
@@ -149,9 +112,11 @@
         <div class="text-bubble-col order-md-2 col-md-6">
             <div class="inside-text-container">
                 <article class="text_square" id="article-christmas">
-                    <h1>Vánoční trhy</h1>
-                    <h4>Každoročně na podporu charity</h4>
-                    <button class="button" onclick="location.href=''">Více informací</button>
+                    <h1 class="cs-lang">Vánoční trhy</h1>
+                    <h1 class="en-lang" style="display: none">Christmas market</h1>
+                    <h4 class="cs-lang">Každoročně na podporu charity</h4>
+                    <h4 class="en-lang" style="display: none">Every year to donate to charity</h4>
+                    <button class="more-info-button" onclick="location.href=''">Více informací</button>
                 </article>
             </div>
 
@@ -165,9 +130,11 @@
         <div class="text-bubble-col order-md-1 col-md-6">
             <div class="inside-text-container">
                 <article class="text_square" id="article-about-us">
-                    <h1>O naší dílně</h1>
-                    <h4>Jak celý projekt vznikal</h4>
-                    <button class="button" onclick="location.href=''">Více informací</button>
+                    <h1 class="cs-lang">O naší dílně</h1>
+                    <h1 class="en-lang" style="display: none">About our workshop</h1>
+                    <h4 class="cs-lang">Jak celý projekt vznikal</h4>
+                    <h4 class="en-lang" style="display: none">How did it all come about</h4>
+                    <button class="more-info-button" onclick="location.href=''">Více informací</button>
                 </article>
             </div>
         </div>

@@ -15,7 +15,7 @@ $cdarkbeige: #bfbd9f;
   scroll-snap-stop: always;
 }
 
-.button {
+.more-info-button {
   background-color: #ddd;
   border: none;
   color: black;
@@ -30,7 +30,7 @@ $cdarkbeige: #bfbd9f;
   border-color: $clightyellow;
 }
 
-.button:hover {
+.more-info-button:hover {
   background-color: #f1f1f1;
   font-weight: bold;
   padding: 10px 22px;
@@ -71,7 +71,7 @@ $cdarkbeige: #bfbd9f;
 
   .text-bubble-col {
     text-align: center;
-    .button{
+    .more-info-button{
       margin-top: 28px;
     }
   }

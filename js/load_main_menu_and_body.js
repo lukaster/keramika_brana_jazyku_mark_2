@@ -1,6 +1,5 @@
 const main_bg_color = '#fcfaf2';
 const cdarkblue = '#031740';
-const testcolor = '#123123';
 var language = window.localStorage.getItem('language');
 
 
@@ -16,32 +15,27 @@ function set_bg_color() {
     });
 }
 
-function add_navbar() {
-    $.get('templates/navbar.html', function (data, status) {
-        //console.log(data);
-        //$('#navbar-template-section').html(data);
+function add_navbar(navbar_html_filepath, current_page_class) {
+    $.get(navbar_html_filepath, function (data, status) {
         var $data = $(data);
-
         if (language === 'en') {
-            //console.log($data.find('#children_menu').text());
-            $data.find('#children_menu').text("Children");
-            $data.find('#adults_menu').text("Adults");
-            $data.find('#teachers_menu').text("Teachers");
-            $data.find('#navbarDropdown').text("Language");
+            $data = switch_html_snippet_language_to_en($data);
+        }
+        if (current_page_class != '') {
+            $data.find("." + current_page_class).css("color", cdarkblue).css("font-weight", "bold");
         }
         $('#navbar-template-section').html($data.unwrap());
     });
-    //var template_section = $('#navbar-template-section').load('templates/navbar.html');
     console.log("navbar loaded")
 }
 
-
 function add_footer(footer_path, image_path) {
     $.get(footer_path, function (data, status) {
-        //console.log(data);
-        //$('#navbar-template-section').html(data);
         var $data = $(data);
-        //console.log($data);
+        console.log(language);
+        if (language === 'en') {
+            $data = switch_html_snippet_language_to_en($data);
+        }
         console.log($($data));
         // console.log( $data.find('#footer_logo'));
         //console.log($data.find('#footer_logo'));
@@ -49,78 +43,63 @@ function add_footer(footer_path, image_path) {
         //console.log($data.find('#footer_logo').attr('src'));
         // if (language === 'en') {
         //console.log($data.find('#children_menu').text());
-
         $('#footer-section').html($data.unwrap());
     });
     console.log("footer loaded")
 }
 
-function add_navbar_other_path(current_page_id) {
-    $.get('../templates/navbar_other_path.html', function (data, status) {
-        //console.log(data);
-        //$('#navbar-template-section').html(data);
-        var $data = $(data);
-
-        if (language === 'en') {
-            //console.log($data.find('#children_menu').text());
-            $data.find('#children_menu').text("Children");
-            $data.find('#adults_menu').text("Adults");
-            $data.find('#teachers_menu').text("Teachers");
-            $data.find('#navbarDropdown').text("Language");
-        }
-        $data.find("#" + current_page_id).css("color", cdarkblue).css("font-weight", "bold");
-        $('#navbar-template-section').html($data.unwrap());
+function switch_html_snippet_language_to_en($data) {
+    $data.find('.cs-lang').each(function (index, item) {
+        var $text = $(item);
+        $text.css("display", "none");
     });
-    //var template_section = $('#navbar-template-section').load('templates/navbar.html');
-    console.log("navbar loaded")
+    $data.find('.en-lang').each(function (index, item) {
+        var $text = $(item);
+        $text.css("display", "block");
+    });
+    return $data
 }
 
-function navbar_en() {
-    $('#children_menu').text("Children");
-    $('#adults_menu').text("Adults");
-    $('#teachers_menu').text("Teachers");
-    $('#navbarDropdown').text("Language");
+function set_lang_en() {
     window.localStorage.setItem('language', 'en');
     console.log("en clicked")
 }
 
-function navbar_cs() {
-    $('#children_menu').text("Děti");
-    $('#adults_menu').text("Dospělí");
-    $('#teachers_menu').text("Učitelé");
-    $('#navbarDropdown').text("Jazyk");
+function set_lang_cs() {
     window.localStorage.setItem('language', 'cs');
     console.log("cs clicked")
 }
 
-function expand_language_on_hover() {
-    var isHovered = $('.nav-item.dropdown').is(":hover");
-    if (isHovered) {
-        $('.nav-item.dropdown').addClass('show').children('div').addClass('show')
-    } else {
-        $('.nav-item.dropdown').removeClass('show').children('div').removeClass('show')
+function switch_page_language() {
+    var language = window.localStorage.getItem('language');
+    if (language === 'en') {
+        $('.cs-lang').each(function (index, item) {
+            var $text = $(item);
+            $text.css("display", "none");
+        });
+        $('.en-lang').each(function (index, item) {
+            var $text = $(item);
+            $text.css("display", "block");
+        });
+        $('.more-info-button').each(function (index, item) {
+            var $button = $(item);
+            $button.text('More information');
+        });
+    }
+    if (language === 'cs') {
+        $('.cs-lang').each(function (index, item) {
+            var $text = $(item);
+            $text.css("display", "block");
+        });
+        $('.en-lang').each(function (index, item) {
+            var $text = $(item);
+            $text.css("display", "none");
+        });
+        $('.more-info-button').each(function (index, item) {
+            var $button = $(item);
+            $button.text('Více informací');
+        });
     }
 }
 
-function navbar_resizing_scrolling() {
-    if (window.scrollY * 3 > window.innerHeight) {
-        if (navbarsize === 'large') {
-            $('.navbar-brand').removeClass("turn_navbar_tall").delay(100).addClass("turn_navbar_small");
-            $('#navbar-template-section').removeClass("navbar_no_margin").delay(10).addClass("navbar_has_margin");
-            //console.log($('.navbar-brand'));
-            navbarsize = 'small';
-        }
-    } else {
-        if (navbarsize === 'small') {
-            $('.navbar-brand').removeClass("turn_navbar_small").delay(100).addClass("turn_navbar_tall");
-            $('#navbar-template-section').removeClass("navbar_has_margin").delay(10).addClass("navbar_no_margin");
 
-            //   setTimeout(() => {
-            //       $('.navbar-brand').removeClass("turn_navbar_tall");
-            //        $('#navbar-template-section').removeClass("navbarmarginbotfalse");
-            //   }, 1500);
-            navbarsize = 'large';
-
-        }
-    }
-}
