@@ -44,12 +44,19 @@
     $(function () {
         $(window).on("load resize", function () {
             if (window.innerWidth > 589) {
-                $(".fill-screen").css("height", window.innerHeight);
-            }else{
-                 $(".fill-screen").css("height","1150px");
+
+                if (window.innerHeight < 500) {
+                    $(".fill-screen").css("height", "500px"); //mobile sideways, table does not overflow background
+                } else {
+
+                    $(".fill-screen").css("height", window.innerHeight); // big screen, background exactly matches window
+                }
+            } else {
+                $(".fill-screen").css("height", "1150px");//mobile view, table longer than one screen height
             }
         });
-    });
+    })
+    ;
 </script>
 
 
