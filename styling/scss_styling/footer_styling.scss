@@ -6,6 +6,33 @@ $cdarkbeige: #bfbd9f;
 $cceadetblue: #6C94B4;
 $clighterceadetblue: #92bde0;
 
+
+.back-to-the-top-button {
+  display: inline-block;
+  background-color: #ddd;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+  border-style: solid;
+  border-color: $clightyellow;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.back-to-the-top-button:hover {
+  background-color: #f1f1f1;
+  font-weight: bold;
+  padding: 10px 22px;
+  border-style: solid;
+  border-color: #ddd;
+}
+
 .keramika-footer {
   background-color: $cdarkblue;
   border-top: $cceadetblue;
