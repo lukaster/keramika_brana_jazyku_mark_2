@@ -5,7 +5,29 @@ $clightbeige: #d8d9b8;
 $cdarkbeige: #bfbd9f;
 
 
+.back-to-the-top-button {
+  display: inline-block;
+  background-color: #ddd;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+  border-style: solid;
+  border-color: $clightyellow;
+}
 
+.back-to-the-top-button:hover {
+  background-color: #f1f1f1;
+  font-weight: bold;
+  padding: 10px 22px;
+  border-style: solid;
+  border-color: #ddd;
+}
 
 
 #hide-navbar-button {
@@ -19,7 +41,7 @@ $cdarkbeige: #bfbd9f;
     padding: 2px 4px;
     padding-bottom: 8px;
     border-style: solid;
-    border-width: 0px ;
+    border-width: 0px;
     border-color: $clightyellow;
     top: 6px;
     left: 7px;
@@ -31,9 +53,9 @@ $cdarkbeige: #bfbd9f;
 
 @media(max-width: 750px) {
   #hide-navbar-button:hover {
-       background-color: rgba(252, 250, 242,0.4);
+    background-color: rgba(252, 250, 242, 0.4);
     font-weight: bold;
-    border-width: 1px ;
+    border-width: 1px;
   }
 }
 
@@ -105,20 +127,47 @@ $cdarkbeige: #bfbd9f;
     /*
 	Label the data
 	*/
-    td:nth-of-type(1):before {
-      content: "Den";
+    .en {
+        td:nth-of-type(1):before {
+        content: "Day";
+      }
+
+      td:nth-of-type(2):before {
+        content: "From - to";
+      }
+
+      td:nth-of-type(3):before {
+        content: "Students";
+      }
+
+      td:nth-of-type(4):before {
+        content: "Teacher";
+      }
+
+      td:nth-of-type(5):before {
+        content: "Free spots";
+      }
     }
-    td:nth-of-type(2):before {
-      content: "Od - do";
-    }
-    td:nth-of-type(3):before {
-      content: "Žáci";
-    }
-    td:nth-of-type(4):before {
-      content: "Hodinu vede";
-    }
-    td:nth-of-type(5):before {
-      content: "Volná místa";
+    .cs {
+      td:nth-of-type(1):before {
+        content: "Den";
+      }
+
+      td:nth-of-type(2):before {
+        content: "Od - do";
+      }
+
+      td:nth-of-type(3):before {
+        content: "Žáci";
+      }
+
+      td:nth-of-type(4):before {
+        content: "Hodinu vede";
+      }
+
+      td:nth-of-type(5):before {
+        content: "Volná místa";
+      }
     }
 
 

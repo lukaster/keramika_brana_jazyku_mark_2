@@ -1,4 +1,37 @@
- function resize_index_page() {
+function switch_page_language() {
+    var language = window.localStorage.getItem('language');
+    if (language === 'en') {
+        $('.cs-lang').each(function (index, item) {
+            var $text = $(item);
+            $text.css("display", "none");
+        });
+        $('.en-lang').each(function (index, item) {
+            var $text = $(item);
+            $text.css("display", "block");
+        });
+        $('.more-info-button').each(function (index, item) {
+            var $button = $(item);
+            $button.text('More information');
+        });
+    }
+    if (language === 'cs') {
+        $('.cs-lang').each(function (index, item) {
+            var $text = $(item);
+            $text.css("display", "block");
+        });
+        $('.en-lang').each(function (index, item) {
+            var $text = $(item);
+            $text.css("display", "none");
+        });
+        $('.more-info-button').each(function (index, item) {
+            var $button = $(item);
+            $button.text('Více informací');
+        });
+    }
+}
+
+
+function resize_index_page() {
             $fill_screen = $('.fill-screen');
             var fill_screen_width = $fill_screen.css('width');//
             var fill_screen_height_int = parseInt(fill_screen_width.replace(/px/, "")) * 0.82;

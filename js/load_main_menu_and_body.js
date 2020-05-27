@@ -70,36 +70,6 @@ function set_lang_cs() {
     console.log("cs clicked")
 }
 
-function switch_page_language() {
-    var language = window.localStorage.getItem('language');
-    if (language === 'en') {
-        $('.cs-lang').each(function (index, item) {
-            var $text = $(item);
-            $text.css("display", "none");
-        });
-        $('.en-lang').each(function (index, item) {
-            var $text = $(item);
-            $text.css("display", "block");
-        });
-        $('.more-info-button').each(function (index, item) {
-            var $button = $(item);
-            $button.text('More information');
-        });
-    }
-    if (language === 'cs') {
-        $('.cs-lang').each(function (index, item) {
-            var $text = $(item);
-            $text.css("display", "block");
-        });
-        $('.en-lang').each(function (index, item) {
-            var $text = $(item);
-            $text.css("display", "none");
-        });
-        $('.more-info-button').each(function (index, item) {
-            var $button = $(item);
-            $button.text('Více informací');
-        });
-    }
-}
+
 
 
