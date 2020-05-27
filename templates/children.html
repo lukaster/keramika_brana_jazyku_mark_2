@@ -54,6 +54,47 @@
             } else {
                 $(".fill-screen").css("height", "1150px");//mobile view, table longer than one screen height
             }
+
+            if (window.innerWidth > 751) {
+                var display_curr = $('#navbar-template-section').css("display")
+                if (display_curr === "none") {
+                    $('#navbar-template-section').css("display", "flex");
+                    $('#hide-navbar-button').css({
+                        "border-color": "#fcfaf2",
+                        "color": "#fcfaf2",
+                        "padding-bottom": "6px",
+                        "border-width": "0px",
+                        "top": "8px"
+                    });
+                }
+            }
+        });
+
+
+        $('#hide-navbar-button').click(function () {
+            console.log("button pushed")
+            var display_curr = $('#navbar-template-section').css("display")
+            if (display_curr === "none") {
+                $('#navbar-template-section').css("display", "flex");
+                $('#hide-navbar-button').css({
+                    "border-color": "#fcfaf2",
+                    "color": "#fcfaf2",
+                    "padding-bottom": "6px",
+                    "border-width": "0px",
+                    "top": "8px"
+                });
+            } else {
+                $('#navbar-template-section').css("display", "none");
+                $('#hide-navbar-button').css({
+                    "border-color": "#031740",
+                    "color": "#031740",
+                    "padding-bottom": "2px",
+                    "border-width": "1px",
+                    "top": "-0.8em"
+                });
+            }
+
+
         });
     })
     ;
@@ -61,6 +102,8 @@
 
 
 <body id="body">
+<button id="hide-navbar-button">&#8691
+</button>
 <nav id="navbar-template-section" class="navbar sticky-top navbar-expand-md">
     <div style="height: 79px"></div>
 </nav>

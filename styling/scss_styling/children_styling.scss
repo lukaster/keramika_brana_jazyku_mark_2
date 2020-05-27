@@ -4,6 +4,37 @@ $clightyellow: #fcfaf2; // #d9d9d9;
 $clightbeige: #d8d9b8;
 $cdarkbeige: #bfbd9f;
 
+
+#hide-navbar-button {
+  @media(max-width: 750px) {
+    font-size: 40px;
+    color: $clightyellow;
+    background-color: rgba(252, 250, 242, 0.3);
+    display: inline-block;
+    position: fixed;
+    z-index: 9999;
+    padding: 2px 4px;
+    padding-bottom: 6px;
+    border-style: solid;
+    border-width: 0px ;
+    border-color: $clightyellow;
+    top: 8px;
+    left: 7px;
+  }
+  @media(min-width: 751px) {
+    display: none;
+  }
+}
+
+@media(max-width: 750px) {
+  #hide-navbar-button:hover {
+       background-color: rgba(252, 250, 242,0.4);
+    font-weight: bold;
+    border-width: 1px ;
+  }
+}
+
+
 #time_table {
   margin-top: 18vh;
 
