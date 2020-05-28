@@ -20,6 +20,7 @@ function add_navbar(navbar_html_filepath, current_page_class) {
         var $data = $(data);
         if (language === 'en') {
             $data = switch_html_snippet_language_to_en($data);
+
         }
         if (current_page_class != '') {
             $data.find("." + current_page_class).css("color", cdarkblue).css("font-weight", "bold");
