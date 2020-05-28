@@ -1,7 +1,168 @@
+@charset "UTF-8";
+.back-to-the-top-button {
+  display: inline-block;
+  background-color: #ddd;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+  border-style: solid;
+  border-color: #fcfaf2;
+}
+
+.back-to-the-top-button:hover {
+  background-color: #f1f1f1;
+  font-weight: bold;
+  padding: 10px 22px;
+  border-style: solid;
+  border-color: #ddd;
+}
+
+@media (max-width: 750px) {
+  #hide-navbar-button {
+    font-size: 40px;
+    color: #fcfaf2;
+    background-color: rgba(252, 250, 242, 0.3);
+    display: inline-block;
+    position: fixed;
+    z-index: 9999;
+    padding: 2px 4px;
+    padding-bottom: 8px;
+    border-style: solid;
+    border-width: 0px;
+    border-color: #fcfaf2;
+    top: 6px;
+    left: 7px;
+  }
+}
+@media (min-width: 751px) {
+  #hide-navbar-button {
+    display: none;
+  }
+}
+
+@media (max-width: 750px) {
+  #hide-navbar-button:hover {
+    background-color: rgba(252, 250, 242, 0.4);
+    font-weight: bold;
+    border-width: 1px;
+  }
+}
+#time_table {
+  margin-top: 14vh;
+  color: #031740;
+}
+@media (max-width: 589px) {
+  #time_table {
+    margin-top: 2vh;
+    /* Hide table headers (but not display: none;, for accessibility) */
+    /*
+    Label the data
+    */
+  }
+  #time_table .fill-screen {
+    height: 1850px;
+  }
+  #time_table h3 {
+    padding-top: 5px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  #time_table table, #time_table th, #time_table td, #time_table tr {
+    display: block;
+  }
+  #time_table table {
+    padding-bottom: 15px;
+    background-color: rgba(252, 250, 242, 0);
+  }
+  #time_table thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  #time_table tr {
+    width: 252px;
+  }
+  #time_table tr:nth-of-type(odd) td {
+    background-color: rgba(252, 250, 242, 0.85);
+  }
+  #time_table tr:nth-of-type(even) td {
+    background-color: rgba(252, 250, 242, 0.6);
+  }
+  #time_table td {
+    /* Behave  like a "row" */
+    border: none;
+    position: relative;
+    padding-left: 50%;
+  }
+  #time_table td:before {
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 0px;
+    left: 6px;
+    font-weight: bold;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+  #time_table .en td:nth-of-type(1):before {
+    content: "Lecture date";
+  }
+  #time_table .en td:nth-of-type(2):before {
+    content: "From - to";
+  }
+  #time_table .en td:nth-of-type(3):before {
+    content: "Teacher";
+  }
+  #time_table .cs td:nth-of-type(1):before {
+    content: "Datum konání";
+  }
+  #time_table .cs td:nth-of-type(2):before {
+    content: "Od - do";
+  }
+  #time_table .cs td:nth-of-type(3):before {
+    content: "Hodinu vede";
+  }
+}
+@media (min-width: 590px) {
+  #time_table {
+    background-color: rgba(252, 250, 242, 0.5);
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+  }
+  #time_table table {
+    text-align: center;
+  }
+  #time_table table th {
+    padding-bottom: 10px;
+    font-size: 20px;
+  }
+  #time_table table td {
+    font-size: 16px;
+    font-weight: bold;
+    padding-bottom: 3px;
+    padding-top: 3px;
+  }
+  #time_table table tr:nth-of-type(odd) td {
+    background-color: rgba(252, 250, 242, 0.8);
+  }
+  #time_table table tr:nth-of-type(even) td {
+    background-color: rgba(252, 250, 242, 0.5);
+  }
+}
+@media (min-width: 992px) {
+  #time_table {
+    margin-left: 35vw;
+  }
+}
+
 .fill-screen {
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
   background-size: cover;
   background-position: center;
 }
@@ -10,46 +171,10 @@
   min-height: 350px;
 }
 
-@media (min-width: 768px) {
-  .video-container {
-    padding-right: 0 !important;
-    padding-left: 0 !important;
-    position: absolute;
-  }
-  .video-container #top_video {
-    max-width: 100%;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  #top_row {
-    background-color: cornsilk;
-    background-size: cover;
-  }
-
-  .fixed-attachment {
-    background-attachment: fixed;
-  }
+.fixed-attachment {
+  background-attachment: fixed;
 }
-@media (max-width: 767px) {
-  .video-container {
-    padding-right: 0 !important;
-    padding-left: 0 !important;
-  }
-  .video-container #top_picture {
-    max-width: 100%;
-  }
 
-  #top_row {
-    background-color: #222;
-    background-size: cover;
-  }
-
-  .fixed-attachment {
-    background-attachment: scroll;
-  }
-}
 section h2 {
   padding-left: 10%;
   padding-top: 10px;
