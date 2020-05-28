@@ -3,6 +3,8 @@ $clightblue: #537fa6;
 $clightyellow: #fcfaf2; // #d9d9d9;
 $clightbeige: #d8d9b8;
 $cdarkbeige: #bfbd9f;
+$clightgrey: #f1f1f1;
+$cdarkergrey:#ddd;
 
 
 .back-to-the-top-button {
@@ -128,7 +130,7 @@ $cdarkbeige: #bfbd9f;
 	Label the data
 	*/
     .en {
-        td:nth-of-type(1):before {
+      td:nth-of-type(1):before {
         content: "Day";
       }
 
@@ -216,29 +218,69 @@ $cdarkbeige: #bfbd9f;
   background-position: center;
 }
 
-.content-filler {
-  min-height: 350px;
-}
 
-.fixed-attachment {
-  // border: 5px solid #000;
-  //  width: 50px;
-  //  height: 50px;
-  background-attachment: fixed;
-  // padding-top:79px!important;
-}
+//content row styling
 
-section {
-  h2 {
-    padding-left: 10%;
-    padding-top: 10px;
-    padding-bottom: 30px;
+body {
+  .content-row {
+    padding-top: 20px;
+  }
+  .news-row{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top-style: solid ;
+     border-top-width: 4px;
+    border-top-color: $cdarkergrey;
+    border-bottom-style: solid;
+    border-bottom-width: 7px;
+        border-bottom-color: $cdarkergrey;
+h2{text-align: center}
+#news_ul{
+   display: flex;
+  justify-content: center;
+}
+     @media (min-width: 992px) {
+       .inside-text-container{
+         padding-left: 15vw;
+         padding-right: 15vw;
+       }
+     }
+
   }
 
-  p {
-    text-align: center;
-    padding-left: 3%;
-    padding-right: 3%;
-  }
+  @media (min-width: 768px) {
+    .text-div {
+      position: relative !important;
 
+      .inside-text-container {
+        position: absolute;
+        top: 50%;
+        height: 10em;
+        margin-top: -7em;
+        left: 50%;
+        width: 20em;
+        margin-left: -10em;
+      }
+    }
+
+
+    .image-div-1 {
+      padding-right: 4vw;
+      padding-left: 4vw;
+
+    }
+
+    .image-div-2 {
+      padding-right: 7vw;
+      padding-left: 1vw;
+    }
+
+    .image-div {
+      img {
+
+      }
+    }
+
+  }
 }
+
