@@ -205,6 +205,12 @@ body .news-row #news_ul {
     padding-right: 15vw;
   }
 }
+body .border-row {
+  padding-top: 20px;
+  border-bottom-style: solid;
+  border-bottom-width: 7px;
+  border-bottom-color: #ddd;
+}
 @media (min-width: 768px) {
   body .text-div {
     position: relative !important;

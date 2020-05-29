@@ -33,13 +33,6 @@ function switch_page_language() {
             $text.css("display", "block");
         });
 
-      /*  if($('.navbar').width()<=589){
-             console.log('small');
-            $('td:nth-of-type(1)').each(function (index, item) {
-                var $td = $(item);
-                console.log($td.attr('before'));
-            })
-        }*/
 
     }
     if (language === 'cs') {
