@@ -3,7 +3,7 @@ $clightblue: #537fa6;
 $clightyellow: #fcfaf2; // #d9d9d9;
 $clightbeige: #d8d9b8;
 $cdarkbeige: #bfbd9f;
-
+$cdarkergrey: #ddd;
 
 .back-to-the-top-button {
   display: inline-block;
@@ -193,36 +193,91 @@ $cdarkbeige: #bfbd9f;
     margin-left: 35vw;
   }
 }
-
-
 .fill-screen {
   background-size: cover;
   background-position: center;
 }
 
-.content-filler {
-  min-height: 350px;
-}
+//content row styling
 
-.fixed-attachment {
-  // border: 5px solid #000;
-  //  width: 50px;
-  //  height: 50px;
-  background-attachment: fixed;
-  // padding-top:79px!important;
-}
+body {
+   .content-row {
+     padding-top: 20px;
+   }
 
-section {
-  h2 {
-    padding-left: 10%;
-    padding-top: 10px;
-    padding-bottom: 30px;
-  }
+   .news-row {
+     padding-top: 20px;
+     padding-bottom: 20px;
+     border-top-style: solid;
+     border-top-width: 4px;
+     border-top-color: $cdarkergrey;
+     border-bottom-style: solid;
+     border-bottom-width: 7px;
+     border-bottom-color: $cdarkergrey;
 
-  p {
-    text-align: center;
-    padding-left: 3%;
-    padding-right: 3%;
-  }
+     h2 {
+       text-align: center
+     }
 
-}
+     #news_ul {
+       display: flex;
+       justify-content: center;
+     }
+
+     @media (min-width: 992px) {
+       .inside-text-container {
+         padding-left: 15vw;
+         padding-right: 15vw;
+
+       }
+     }
+
+   }
+
+   .border-row {
+     padding-top: 20px;
+     border-bottom-style: solid;
+     border-bottom-width: 7px;
+     border-bottom-color: $cdarkergrey;
+   }
+
+   @media (min-width: 768px) {
+     .text-div {
+       position: relative !important;
+
+       .inside-text-container {
+         position: absolute;
+         top: 50%;
+         height: 10em;
+         margin-top: -7em;
+         left: 50%;
+         width: 20em;
+         margin-left: -10em;
+
+         article{
+           ul{}
+
+         }
+       }
+     }
+
+
+     .image-div-1 {
+       padding-right: 4vw;
+       padding-left: 4vw;
+
+     }
+
+     .image-div-2 {
+       padding-right: 7vw;
+       padding-left: 1vw;
+     }
+
+     .image-div {
+       img {
+
+       }
+     }
+
+   }
+ }
